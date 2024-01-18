@@ -1,0 +1,180 @@
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff'); font-weight:800; font-style:normal; }
+body {
+    font-family: 'Pretendard', serif;
+    font-size: 15px; 
+    color: #3d3d3d;
+    font-weight: 400;
+    line-height: 1; 
+    word-break: keep-all;
+}
+.wrapper { /* 홈페이지 넓이를 제한하고 가운데 정렬 */
+    width: 1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+/* 태그초기화 - 태그의 기본스타일 제거 */
+* { 
+    padding: 0; /* 모든 태그의 여백삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넓이를 늘리는 요소인데 
+        넓이를 늘리지 않도록 하는 속성 */
+}
+/* 다중선택자 쉼표로 연결한 선택자 모두에게 
+    동일한 스타일을 적용할때 사용 */
+ul, ol, li {
+    list-style: none; /* ul li 앞의 동그라미 삭제 */
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline 제거 */
+    color: inherit; /* 색상은 상속받아 - 파란색 말고 누군가가 상속해준 스타일을 적용 */
+}
+
+header {
+    height: 100px;
+}
+header .logo {
+    float: left;
+    margin: 32px 0 0 0;
+}
+header .logo a {
+    display: block;
+}
+header .gnb {
+    float: right;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    font-size: 22px;
+    color: #1d1d1d;
+    padding: 38px 20px 38px 20px; 
+    display: block;
+    /* a태그는 inline태그- padding 제대로 적용 X
+    padding 시키기 위해서는 block 태그로 변경 */
+}
+/* a태그에 마우스를 오버했을때 - 가상선택자(hover) */
+header .gnb ul li a:hover {
+    text-decoration: underline;
+}
+
+.visual {
+    /* 경로에서 ../는 폴더 밖으로 나가라는 명령 
+        backgrorund에 아무리 큰 이미지를 넣어도
+        해당 영역이 존재하는 만큼만 보임 
+        background에 큰 이미지를 넣었고 
+        그걸 다 보이게 하려면 높이를 줘야함.
+        background에 큰 이미지 넣었다고 영역이 커지지 않음 */
+        height: 800px;
+        background: url(../images/visual_bg.png) center center no-repeat;
+        color: #fff;
+        /* 배경색 때문에 그 내부의 글자색상이 달라졌다면
+        대표되는 색을 background랑 같이 선언해주는 것이 이해가 쉬움 */
+        text-align: center;
+}
+.visual h2 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: center;
+    padding: 340px 0 0 0;
+    /* 여백을 margin으로 줬는데 이상하게 들어가면 padding 으로 바꾸면 됨 */
+}
+.visual p {
+    font-size: 26px;
+    letter-spacing: -0.03em;
+}
+
+.biz h2 {
+    font-size: 45px;
+    color: #1d1d1d;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -0.05em; /* 대충 포토샵의 자간 -50 */
+    margin: 90px 0 50px 0;
+    line-height: 1;
+}
+.biz h2 strong {
+    font-size: 15px;
+    font-weight: 400;
+    color: #3d3d3d;
+    letter-spacing: 0em;
+}
+.biz ul {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.biz ul li h3 {
+    font-size: 40px;
+    font-weight: 400;
+    margin: 16px 0 16px 0;
+}
+.biz ul li a {
+    border: 1px solid #cccccc;
+    padding: 13px 82px 13px 82px;
+    display: inline-block; 
+    /* 넓이 100%라는 말 - 나를 감싸는 요소의 넓이 100%
+        그럼 a한테 display:block 주면 li와 넓이가 같아짐.
+        padding만 잘 들어가길 원함 > display:inline-block */
+    margin: 20px 0 0 0;
+}
+
+.brand {
+    height: 750px;
+    background: url(../images/brand_bg.png) center center no-repeat;
+    margin: 130px 0 0 0;
+    color: #fff;
+    text-align: right;
+}
+.brand h2 {
+    font-size: 45px;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    padding: 235px 0 0 0;
+    /* margin으로 여백을 줬는데
+    여백이 올바르게 들어가지 않는다면
+    padding으로 변경 */
+}
+.brand p {
+    font-size: 20px;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: -0.05em;
+    margin: 12px 0 25px 0;
+}
+.brand a {
+    border: 1px solid rgba(255,255,255,0.6);
+    /* 선을 흰색으로 주고 opacity 60%를 준 경우
+    선색을 rgba로 투명하게 준다. */
+    padding: 15px 45px 15px 45px;
+    display: inline-block;
+    /* a태그는 인라인 태그라서 padding이 
+        올바르게 적용되지 않음
+        그래서 display:block을 주면 a태그를 감싸는 요소
+        wrapper 넓이와 넓이가 같아짐
+        padding만 올바르게 주려면 display:inline-block 줌
+        일단 display:block을 주고 넓이가 너무 넓어지면 
+        그때만 display:inline-block 줌 */ 
+}
+
+footer {
+    background-color: #1d1d1d;
+    color: rgba(255,255,255,0.8);
+    padding: 70px 0 70px 0; 
+    /* footer는 나중에 반응형 할 것을 감안해서
+        위아래 여백을 footer가 padding으로 처리 */
+}
+footer .f_nav {
+    display: flex;
+    margin: 0 0 15px 0;
+}
+footer .f_nav li {
+    margin: 0 20px 0 0;
+}
+footer .f_nav .privacy {
+    font-weight: 800;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+}
