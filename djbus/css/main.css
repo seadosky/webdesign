@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+    }         
+@font-face {
+        font-family: 'Pretendard';
+        font-weight: 800;
+        font-display: swap;
+        src: local('Pretendard ExtraBold'), url(../fonts/Pretendard-ExtraBold.woff2) format('woff2'), url(../fonts/Pretendard-ExtraBold.woff) format('woff');
+    }
+body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 15px; 
+    color: #3d3d3d;
+    font-weight: 400;
+    line-height: 1.4; 
+    word-break: keep-all;
+    letter-spacing: -0.05em; /* 자간 */
+}
+.wrapper { /* 홈페이지 넓이를 제한하고 가운데 정렬 */
+    width: 1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;  
+    /* PC형에서 wrapper사이즈보다 브라우저 넓이가 작을때
+        가로스크롤바가 생성되고, 오른쪽에 background가 짤리는 현상이 생김.
+        가로스크롤바가 생성되었을 때에도 홈페이지를 정상적으로
+        서비스 하기 위해서 최소 넓이를 입력*/
+}
+/* 태그초기화 - 태그의 기본스타일 제거 */
+* { 
+    padding: 0; /* 모든 태그의 여백삭제 */
+    margin: 0;
+    box-sizing: border-box;
+    /* padding하고 border는 넓이를 늘리는 요소인데 
+        넓이를 늘리지 않도록 하는 속성 */
+}
+/* 다중선택자 쉼표로 연결한 선택자 모두에게 
+    동일한 스타일을 적용할때 사용 */
+ul, ol, li {
+    list-style: none; /* ul li 앞의 동그라미 삭제 */
+}
+a { /* a태그는 파란색에 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline 제거 */
+    color: inherit; /* 색상은 상속받아 - 파란색 말고 누군가가 상속해준 스타일을 적용 */
+}
+
+.header {
+    height: 100px;
+}
+.header .logo {
+    float: left; 
+    /* 내 자신이 감싸는 영역의 왼쪽으로 이동 */
+    margin: 20px 0 0 0;
+}
+.header .gnb {
+    float: right;
+    /* 내 자신이 감싸는 영역의 오른쪽으로 이동 */
+}
+.header .gnb ul {
+    display: flex;
+    /* 내 자식 요소들이 좌우로 배치됨 */
+}
+.header .gnb ul li a {
+    font-size: 20px;
+    color: #1d1d1d;
+    padding: 35px 20px 35px 20px;
+    display: block;
+    /* a태그는 inline태그라서 padding이 적용되지 않음.
+        block태그로 변경하여 값이 적용되도록 함. 
+        header의 높이가 100px이라 a태그의 높이가 100px을 넘으면 안됨 */
+}
+
+.visual {
+    height: 750px;
+    background: url(../images/visual_bg.png) center center no-repeat;
+    /* 배경에 큰 이미지를 넣는다고 이미지가 모두 다 보이는 것은 아님
+        배경이 모두 보이려면 반드시 영역에 높이를 줘야 함. */
+    color: #fff;
+}
+.visual strong {
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    padding: 250px 5px 0 0; /* margin이 적용이 안되서 padding으로 수정 */
+    display: block; /* 여백이 적용되지 않아 block */
+    text-align: right;
+    line-height: 1.2;
+}
+.visual h2 {
+    font-size: 50px;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    text-align: right;
+    line-height: 1.2;
+}
+
+/* , : biz .art와 .biz .edu 둘 다에게 동일한 스타일을 적용할 때 사용 - 다중선택자*/
+.biz .art, .biz .edu {
+    display: flex; /* inner와 img가 좌우로 배치 */
+}
+/* art, edu 의 h2를 한꺼번에 스타일 줄 수 있음. (동일한 스타일) 
+    inner도 선택자로 잘 안 부르는 편 */
+.biz .edu {
+    justify-content: flex-end;
+    text-align: right;
+}
+.biz .art .inner {
+    margin: 0 0 0 90px;
+}
+.biz .edu .inner {
+    margin: 0 90px 0 0;
+}
+.biz h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin: 60px 0 5px 0;
+}
+.biz .sub_tit {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+.biz .btn_wrap {
+    margin: 14px 0 0 0;
+}
+.biz .btn_wrap a {
+    border: 1px solid #cccccc;
+    padding: 8px 20px 8px 20px;
+    display:inline-block;
+    /* paddding값을 적용시키기 위해서 display:block;을 주지만
+        가로 100%로 넓어져서 display:inline-block으로 줌 
+        display:inline-block은 내가 주지 않은 여백이 좌우에 들어감. 
+        그 여백을 감안하고 좌우 여백을 주면 됨. */
+}
+.biz .art .btn_wrap a {
+    margin: 0 5px 0 0;
+}
+.biz .edu .btn_wrap a {
+    margin: 0 0 0 5px;
+}
