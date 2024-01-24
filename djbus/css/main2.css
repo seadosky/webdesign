@@ -248,7 +248,7 @@ address, em {
     color: #1d1d1d;
     font-weight: inherit;
     font-size: 20px;
-    margin: 16px;
+    margin: 5px;
     display: block;
 }
 .bbs .video ul li a img {
@@ -270,4 +270,18 @@ address, em {
 }
 .footer .f_nav li {
     margin: 0 30px 0 0;
+}
+.footer .f_nav .privacy {
+    font-weight: 800;
+}
+.footer .f_info {
+    display: flex;
+    margin: 26px 0 26px 0;
+}
+.footer .f_info span,
+.footer .f_info address {
+    margin: 0 30px 0 0;
+}
+.footer .copyright {
+    color: rgba(255,255,255,0.6);
 }
