@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+    }         
+@font-face {
+        font-family: 'Pretendard';
+        font-weight: 800;
+        font-display: swap;
+        src: local('Pretendard ExtraBold'), url(../fonts/Pretendard-ExtraBold.woff2) format('woff2'), url(../fonts/) format('woff');
+    }
+html, body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 15px; 
+    color: #3d3d3d;
+    font-weight: 400;
+    line-height: 1.5; 
+    word-break: keep-all;
+    letter-spacing: -0.05em;
+}
+.wrapper { 
+    width: 1280px;
+    margin: 0 auto; 
+}
+#wrap {
+    min-width: 1280px;  
+    }
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul, ol, li {
+    list-style: none; /* ul li 앞의 동그라미 삭제 */
+}
+a {
+    text-decoration: none; /* underline 제거 */
+    color: inherit; /* 색상은 상속받아 - 파란색 말고 누군가가 상속해준 스타일을 적용 */
+}
+address, em {
+    font-style: normal;
+}
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.biz h2 {
+    font-size: 45px;
+    font-weight: 800;
+    text-align: center;
+    margin: 80px 0 20px 0;
+}
+.biz ul {
+    display: flex;
+    justify-content: space-between;
+}
+.biz ul li {
+    width: 290px;
+}
+.biz ul li a h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.tech {
+    background-color: #F4F4F4;
+    height: 762px;
+    margin-top: 80px;
+}
+.tech h2 {
+    font-size: 45px;
+    font-weight: 800;
+    text-align: center;
+    padding: 80px 0 20px 0;
+}
+.tech ul {
+    display: flex;
+    justify-content: space-between;
+}
+.tech ul li {
+    width: 620px;
+    color: #fff;
+}
+.tech ul li.tech01 {
+    background: url(../images/tech01.png) center center no-repeat; 
+}
+.tech ul li.tech01 a {
+    height: 514px;
+    display: block;
+}
+.tech ul li.tech01 a h3 {
+    font-size: 35px;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 196px;
+}
+.tech ul li.tech01 a p {
+    text-align: center;
+    margin-top: 8px;
+}
+.tech ul li.tech02 {
+    background: url(../images/tech02.png) center center no-repeat;
+}
+.tech ul li.tech02 a {
+    height: 514px;
+    display: block;
+}
+.tech ul li.tech02 a h3 {
+    font-size: 35px;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 196px;
+}
+.tech ul li.tech02 a p {
+    text-align: center;
+    margin-top: 8px;
+}
