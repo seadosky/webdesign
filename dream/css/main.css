@@ -25,6 +25,7 @@ html, body {
         가로스크롤바가 생성되었을 때에도 홈페이지를 정상적으로
         서비스 하기 위해서 최소 넓이를 입력*/
 }
+
 /* 640px 이하일 때 스타일 - 640 이하는 모바일 초과인 탭 */
 @media screen and (max-width:640px){
     html, body {
@@ -44,7 +45,7 @@ html, body {
 
 .header {
     /* body를 기준으로 정렬 */
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: 100; /* header를 맨 위에 배치하기 위해 (다른요소에 가려서 안보일까봐) */
@@ -106,6 +107,22 @@ html, body {
     font-size: 0;
     line-height: 0;
 }
+/* header가 스크롤이 되면 jquery에서 header에 fixed라는 클래스를 추가할 예정의 스타일 */
+.header.fixed {
+    color: #1d1d1d;
+    border-bottom: 0;
+    background-color: #fff;
+}
+.header.fixed .logo a {
+    background: url(../images/logo.svg) no-repeat center center / contain;
+}
+.header.fixed .login {
+    background: url(../images/login.svg) no-repeat center center;
+}
+.header.fixed .lang {
+    background: url(../images/lang.svg) no-repeat center center;
+}
+
 @media screen and (max-width:640px){
     .header {
         height: 50px;
@@ -123,7 +140,7 @@ html, body {
         width: 20px;
         height: 20px;
         background: url(../images/gnb_open_w.svg) no-repeat center center;
-        margin: 16px;
+        margin-top: 16px;
         font-size: 0;
         line-height: 0;
     }
@@ -136,6 +153,9 @@ html, body {
     }
     .header .lang {
         display: none;
+    }
+    .header.fixed .gnb .gnb_open {
+        background: url(../images/gnb_open.svg) no-repeat center center;
     }
 }/*media*/
 
@@ -172,6 +192,7 @@ html, body {
     font-size: 18px;
     margin-top: 20px;
 }
+
 @media screen and (max-width:640px) {
     .visual .inner {
     height: 320px;
@@ -188,3 +209,104 @@ html, body {
         display: none;
     }
 }/*media*/
+
+.service {
+    background-color: #F4f4f4;
+    color: #1d1d1d;
+    height: 180px;
+    padding-top: 49px;
+}
+.service h2 {
+    display: none; /* 웹표준상 제목을 썼지만 디자인에는 없는 요소라 숨김 */
+}
+.service ul {
+    display: flex;
+    justify-content: space-between;
+}
+.service ul li {
+    width: 190px
+}
+.service ul li a {
+    padding: 23px 0 23px 88px;
+    display: inline-block;
+    position: relative; /* before 정렬 기준 */
+}
+.service ul li a::before {
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    content: "";
+    width: 82px;
+    height: 82px;
+}
+.service ul li.service01 a::before {
+    background: url(../images/service01.svg) no-repeat center center;
+}
+.service ul li.service02 a::before {
+    background: url(../images/service02.svg) no-repeat center center;
+}
+.service ul li.service03 a::before {
+    background: url(../images/service03.svg) no-repeat center center;
+}
+.service ul li.service04 a::before {
+    background: url(../images/service04.svg) no-repeat center center;
+}
+.service ul li.service05 a::before {
+    background: url(../images/service05.svg) no-repeat center center;
+}
+.service ul li.service06 a::before {
+    background: url(../images/service06.svg) no-repeat center center;
+}
+
+@media screen and (max-width:640px) {
+    .service {
+        height: 230px;
+        padding-top: 30px;
+    }
+    .service ul {
+        flex-wrap: wrap; /* 두줄 허용 */ 
+    }
+    .service ul li {
+        width: 96px;
+        /* 한줄에 3개이고 사이사이 여백 16px
+            넓이는 % (한줄 3개 33.33% - 여백 px 총 여백 32px/3 => width: cal(33.33% - 11px) */
+        margin-bottom: 17px;
+        text-align: center;
+    }
+    .service ul li a {
+        padding: 61px 0 0 0;
+        display: block;
+    }
+    .service ul li a::before {
+        left: calc(50% - 28px);
+        top: 0;
+        content: "";
+        width: 56px;
+        height: 56px;
+    }
+    .service ul li.service01 a::before {
+        background-size: 56px auto;
+    }
+    .service ul li.service02 a::before {
+        background-size: 56px auto;
+    }
+    .service ul li.service03 a::before {
+        background-size: 56px auto;
+    }
+    .service ul li.service04 a::before {
+        background-size: 56px auto;
+    }
+    .service ul li.service05 a::before {
+        background-size: 56px auto;
+    }
+    .service ul li.service06 a::before {
+        background-size: 56px auto;
+    }
+    .service ul li a span {
+        display: none;
+    }
+}/*media*/
+
+.footer { /**/
+    height: 500px;
+}
