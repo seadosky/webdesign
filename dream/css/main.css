@@ -602,8 +602,8 @@ html, body {
     }
     .news .more a::after {
         position: absolute;
-        right: 10px;
-        top: 9px;
+        right: 11px;
+        top: 8px;
         width: 15px;
         height: 15px;
     }
@@ -678,7 +678,7 @@ border: 1px solid rgba(255, 255, 255, 0.6);
 .webzine .more a::after {
     position: absolute;
     right: 17px;
-    top: 13px;
+    top: 11.5px;
     width: 12px;
     height: 12px;
     background: url(../images/webzine_more.svg) no-repeat center center / contain;
@@ -740,17 +740,19 @@ border: 1px solid rgba(255, 255, 255, 0.6);
         margin-top: 20px;
     }
     .webzine .more a {
-        border: 1px solid rgba(255, 255, 255, 0.6);
-        border-radius: 17px;
-        padding: 6px 32px 8px 22px;
+        position: relative;
         display: inline-block;
+        padding: 6px 28px 6px 16px;
+        font-size: 13px;
     }
     .webzine .more a::after {
-        right: 10px;
-        top: 9px;
+        position: absolute;
+        right: 14px;
+        top: 11px;
         width: 9px;
         height: 9px;
     }
+
 }/*m*/
 
 .footer { 

@@ -1,0 +1,144 @@
+@charset "utf-8";
+@import url(default.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+    }
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+html, body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 15px; 
+    color: #3d3d3d;
+    font-weight: 400;
+    line-height: 1.4; 
+    word-break: keep-all;
+    word-wrap: break-word; /* 단어별로 줄바꿈을 하는데 단어가 엄청 긴 경우는 강제 줄바꿈을 혀용 */
+    /* letter-spacing: -0.05em; */
+}
+.wrapper { /* 홈페이지 넓이를 제한하고 가운데 정렬 */
+    width: 1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;  
+    /* PC형에서 wrapper사이즈보다 브라우저 넓이가 작을때
+        가로스크롤바가 생성되고, 오른쪽에 background가 짤리는 현상이 생김.
+        가로스크롤바가 생성되었을 때에도 홈페이지를 정상적으로
+        서비스 하기 위해서 최소 넓이를 입력*/
+}
+
+/* 640px 이하일 때 스타일 - 640 이하는 모바일 초과인 탭 */
+@media screen and (max-width:640px){
+    html, body {
+        font-size: 13px; 
+    }
+    .wrapper { 
+        width: auto;
+        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨
+            디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에
+            그 안쪽으로 좌우 여백이 20px씩 들어가게 함.  */
+        margin: 0 20px; 
+    }
+    #wrap { 
+        min-width:auto;  /* 홈페이지의 최소넓이 제한하지 않음 */
+    }
+}/*media*/
+
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+.header .logo {
+    float: left;
+    margin-top: 21px;
+}
+.header .logo a {
+    width: 160px;
+    height: 53px;
+    display: block;
+    /* 이미지를 저장해서 부르지 않고 코드로 변환해서 입력하는 방식 */
+    background: url(data:image/png;base64,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) no-repeat center center / contain;
+    font-size: 0;
+    line-height: 0;
+}
+.header .gnb {
+    float: right;
+}
+.header .gnb .gnb_open,
+.header .gnb .gnb_close {
+    display: none; /* 모바일에서만 구현 */
+}
+.header .gnb ul.depth1 {
+    display: flex;
+}
+.header .gnb ul.depth1 > li {
+    width: 210px;
+    text-align: center;    
+}
+.header .gnb ul.depth1 > li > a {
+    line-height: 100px;
+    display: block;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+/* 1차메뉴의 하위메뉴에 마우스를 오버했을때도 오버스타일을 적용하기 위해서 
+    li에 오버했을때 a스타일을 바뀌게 해줌*/
+.header .gnb ul.depth1 > li:hover > a { 
+    color: #00ACD1;
+    position: relative; /* after 정렬의 기준 */
+}
+.header .gnb ul.depth1 > li:hover > a::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #00ACD1;
+    content: "";
+}
+.header .gnb ul.depth2 {
+    margin-top: 20px;
+    display: none; /* 2차메뉴는 마우스를 오버했을때만 나타남 */
+}
+.header .gnb ul.depth2 > li > a {
+    display: block;
+    line-height: 35px;
+}
+.header .gnb ul.depth2 > li > a:hover {
+    color: #00ACD1;
+    font-weight: 700;
+}
+
+/* 메뉴에 마우스를 올렸을 때의 스타일*/
+.header.menu_over {
+    color: #1d1d1d;
+}
+.header.menu_over::after {
+    position: absolute; /* header를 기준으로 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 350px;
+    background-color: #fff;
+    content: "";
+}
+
+.visual {
+    height: 1000px;
+    background: url(../images/menu0207_visual_bg.png) no-repeat center center / cover;
+}
