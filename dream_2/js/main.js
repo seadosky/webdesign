@@ -1,26 +1,93 @@
 $(document).ready(function(){
-	console.log('안녕하세요')
-    /* 브라우저를 스크롤했을때 맨 위면 header에 fixed라는 클래스를 삭제
-        조금이라도 아래로 스크롤된 상태라면 header에 fixed라는 클래스를 줌
-        
-        1. 브라우저가 스크롤 된 정도를 표시한 값
-            $(window).scrollTop()
-        2. 만약 스크롤 값이 0이라면
-            header에 fixed라는 클래스를 삭제
-            만약 스크롤 값이 0보다 크다면 
-            header에 fixed라는 클래스를 줌
-    */
-    $(window).scroll(function(){
-        let scrolling = $(window).scrollTop()
+    //html문서가 로딩되면 단 1번 실행
+    /* 스크롤시 header 스타일 변경 */
+    let scrolling //스크롤 된 값
+    
+    function scroll_chk(){ //함수의 선언
+        scrolling = $(window).scrollTop()
         //console.log(scrolling)
-        
-        /* 조건문 - scrolling값이 0보다 크면 */
-        if(scrolling > 0){
-            //console.log('0보다크다')
-            $(".header").addClass("fixed");	
-        }else{ //0일때 - 맨 꼭대기에 있을 때 
-            //console.log('0이다')
-            $(".header").removeClass("fixed");
+        if(scrolling > 0){ //스크롤 된 값이 0보다 크다면 - fixed 클래스 추가
+            $('.header').addClass('fixed')
+        }else{ //0이거나 0보다 작거나 - fixed 클래스 삭제
+            $('.header').removeClass('fixed')
         }
-    });//$(window).scroll
-});//$(document).ready
+    }
+    scroll_chk() //함수의 호출
+
+    $(window).scroll(function(){
+        //브라우저가 스크롤 될때마다 1번만 실행
+        scroll_chk()
+    })//$(window).scroll
+
+    /* pc버전시 메뉴에 오버하면 header 스타일 변경 */
+    let window_w //브라우저 넓이
+    let device_status //모바일모드인지 pc모드인지 구분
+    let mobile_size = 640
+    function device_chk(){
+        window_w = $(window).width() //브라우저 넓이 저장
+        if(window_w > mobile_size){ //pc버전
+            device_status = 'pc'
+        }else{ //640부터 그 이하
+            device_status = 'mobile'
+        }
+        console.log(device_status)
+    }//function device_chk
+    device_chk() //함수 호출
+    $(window).resize(function(){
+        device_chk() //함수 호출
+    })
+    $('.header .gnb').on('mouseenter focusin', function(){
+        if(device_status == 'pc'){ //pc일때만 실행
+            $('header').addClass('menu_over')
+        }
+    })
+    $('.header').on('mouseleave', function(){
+        $('.header').removeClass('menu_over')
+    })
+    $('.header .tnb .login').on('focusin', function(){
+        $('.header').removeClass('menu_over') 
+    })
+
+    /* 모바일 메뉴 열기/닫기 */
+    $('.header .gnb .gnb_open').on('click', function(){
+        $('.header').addClass('menu_open')
+    })
+    $('.header .gnb .gnb_close').on('click', function(){
+        $('.header').removeClass('menu_open')
+    })
+
+    /*
+        <li>                         -- sub_open 클래스 추가
+            <a href="#n">1차메뉴</a>  --  .header .gnb ul.depth1 > li > a
+            <ul class="depth2">
+            </ul>
+        </li>
+        1차메뉴 a를 클릭하면 감싸는 li에 클래스를 추가
+        a는 href 이동값을 가지고 있음 - 모바일에서 클릭되면 안됨. 
+    */
+    $(".header .gnb ul.depth1 > li > a").on("click", function(e){
+        if(device_status == 'mobile'){
+            e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+            $(this).parent().toggleClass('sub_open')
+        }
+    });
+    /* top버튼을 클릭하면 상단으로 자동 스크롤 */
+    $('footer .top').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
+
+    //팝업
+    const swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
+
+        autoplay: {  /* 팝업 자동 실행 */
+            delay: 3000,
+            disableOnInteraction: true,
+        },
+
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+
+});
+
+})//$(document).ready
