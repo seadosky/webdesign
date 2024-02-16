@@ -53,7 +53,7 @@ html, body {
         가로스크롤바가 생성되고, 오른쪽에 background가 짤리는 현상이 생김.
         가로스크롤바가 생성되었을 때에도 홈페이지를 정상적으로
         서비스 하기 위해서 최소 넓이를 입력*/
-    overflow: hidden;
+    /* overflow: hidden; */
     /* 콘텐츠 영역 밖에 나간 요소를 숨김 */
 }
 
@@ -367,6 +367,7 @@ html, body {
 
 .book {
     margin: 150px 0 0 0;
+    overflow: hidden;
 }
 .book .inner {
     position: relative; /* more 정렬의 기준 */
@@ -557,8 +558,12 @@ html, body {
 }/*m*/
 
 .interview {
-    margin: 150px 0 0 0;
-    background-color: #f4f4f4;
+    margin: 100px 0 0 0;
+    background-color: #F8F4F1;
+    padding-bottom: 140px;
+}
+.interview .wrapper {
+    position: relative;
 }
 .interview .tit {
     padding: 100px 0 0 0;
@@ -579,9 +584,17 @@ html, body {
 .interview .list ul {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    /* 두번째 li에 상단여백을 줘서 내림 
+        모든 li의 길이가 늘어남 
+        두번째 li 상단여백 + li 길이만큼 늘어남
+        flex는 모든 li요소의 길이를 동일하게 맞추려고 함
+        원래 li의 길이대로만 나타나게 하려면
+        반드시 align-items 속성을 줘야함 (어떤 값이든 상관없음) */
 }
 .interview .list ul li {
     width: 408px;
+    position: relative; /* cnt 정렬의 기준 */
 }
 .interview .list ul li:nth-child(2) {
     margin-top: 40px;
@@ -603,4 +616,412 @@ html, body {
 }
 .interview .list ul li a .photo img {
     filter: grayscale(100%); /* 흑백 */
+    transition: 0.5s;
+}
+.interview .list ul li a .cnt {
+    position: absolute; /* li가 정렬의 기준 */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 20px 30px;
+}
+.interview .list ul li a .cnt h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.interview .list ul li a .cnt p {
+    display: none;
+}
+.interview .list ul li a .cnt span {
+    font-size: 0;
+    line-height: 0;
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0625 15.9374H6.875V14.0625H14.0625V6.875H15.9374V14.0625H23.1249V15.9374H15.9374V23.1249H14.0625V15.9374Z' fill='white' fill-opacity='0.8'/%3E%3C/svg%3E%0A");
+}
+
+/* li에 active 들어갔을때 스타일이 바뀌는건 pc에서만 적용되는 스타일
+    모바일에서는 기본 스타일만 존재함 
+    미디어쿼리 in-width:641px 로 스타일 선언
+    - 브라우저 사이즈 641px 이상에서만 해당스타일 적용됨 */
+@media screen and (min-width:641px){
+    /* 오버되었을때 */
+    .interview .list ul li.active a .photo {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    .interview .list ul li.active a .photo img {
+        filter: grayscale(0); /* 칼라 - 숫자 0 단위 없음 */
+    }
+    .interview .list ul li.active a .cnt {
+        bottom: -85px;
+        width: 370px;
+        height: 175px;
+        display: block; /* flex 해제 */
+        padding: 30px 30px 0 30px;
+        background-color: #674126;
+        border-radius: 60px 0 60px 0;
+    }
+    .interview .list ul li:nth-child(2).active a .cnt {
+        border-radius: 0 60px 0 60px;
+    }
+    .interview .list ul li.active a .cnt p {
+        display: block;
+        margin: 10px 0;
+        /* 콘텐츠를 3줄로 제한 */
+        line-height: 1.2;
+        height: 3.6em; /* 행간*줄수 (단위 em) */
+        overflow: hidden;
+    }
+    .interview .list ul li.active a .cnt span {
+        font-size: 15px;
+        line-height: 1.2;
+        width: auto;
+        height: auto;
+        background: none;  /* 배경 삭제 */
+        display: block;
+        text-align: right;
+        position: relative; /* before 정렬의 기준 */
+    }
+    .interview .list ul li.active a .cnt span::before {
+        position: absolute; /* span 기준으로 정렬 */
+        left: 0;
+        top: 8px;
+        width: calc(100% - 5.5em);
+        /* 6em 이라는 단위는 글자 6글자의 넓이
+            반응형에서 글자의 크기가 변경되면 px로 한 경우 
+            계속 글자가 바뀔때마다 넓이를 변경해야 함 
+            하지만 em이라는 단위를 사용하면 글자크기가 줄어도 변경을 안해도 됨
+            글자의 크기에 상대크기로 글자수의 넓이를 줌 */
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+        content: "";
+    }
+}/*m*/
+
+.interview .more {
+    position: absolute;
+    left: calc(50% - 75px); /* */
+    top: 218px;
+}
+.interview .more a {
+    width: 150px;
+    line-height: 40px;
+    border: 1px solid #999;
+    display: block;
+    padding: 0 0 0 14px;
+    position: relative; /* after 정렬의 기준 */
+    transition: 0.3s;
+}
+.interview .more a::after {
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 8px;
+    top: 11px;
+    width: 15px;
+    height: 15px;
+    content: "";
+    transition: 0.3s;
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.00956 13.5336L4.12256 12.6466L9.2692 7.49995L4.12256 2.35331L5.00956 1.46631L11.0432 7.49995L5.00956 13.5336Z' fill='%23777777'/%3E%3C/svg%3E%0A");
+}
+.interview .more a:hover {
+    background-color: #674126;
+    border: 1px solid #674126;
+    color: #fff;
+}
+.interview .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.00956 13.5336L4.12256 12.6466L9.2692 7.49995L4.12256 2.35331L5.00956 1.46631L11.0432 7.49995L5.00956 13.5336Z' fill='white'/%3E%3C/svg%3E%0A");
+    animation-name: more; 
+    animation-duration: 1.2s; 
+    animation-iteration-count: infinite; 
+    animation-timing-function: linear;
+}
+@media screen and (max-width:640px){
+    .interview {
+        margin: 50px 0 0 0;
+        padding-bottom: 50px;
+    }
+    .interview .tit {
+        padding: 40px 0 0 0;
+        text-align: left;
+    }
+    .interview .tit h2 {
+        font-size: 25px;
+        margin-bottom: 8px;
+    }
+    .interview .tit p {
+        color: #231815;
+    }
+    .interview .list {
+        margin: 18px 0 0 0;
+    }
+    .interview .list ul li {
+        width: auto;
+    }
+    .interview .list ul li:nth-child(2),
+    .interview .list ul li:nth-child(3) {
+        display: none;
+    }
+    .interview .list ul li a .photo {
+        border-radius: 30px 0 30px 0;
+    }
+    .interview .list ul li a .photo img {
+        filter: grayscale(0%); /* 흑백-> 칼라 */
+        width: 100%;
+    }
+    .interview .list ul li a .cnt {
+        bottom: 0;
+        display: block;
+        padding: 20px 6% 0 6%;
+        background-color: #674126;
+        border-radius: 30px 0 30px 0;
+        height: 138px;
+    }
+    .interview .list ul li a .cnt h3 {
+        font-size: 17px;
+    }
+    .interview .list ul li a .cnt p {
+        display: block;
+        margin: 8px 0 18px 0;
+        line-height: 1.2;
+        height: 2.4em;
+        overflow: hidden;
+    }
+    .interview .list ul li a .cnt span {
+        font-size: 13px;
+        line-height: 1.2;
+        width: auto;
+        height: auto;
+        background: none;
+        text-align: right;
+        position: relative; /* before 정렬의 기준 */
+        display: block;
+    }
+    .interview .list ul li a .cnt span::before {
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: calc(100% - 5.5em);
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+        content: "";
+    }
+    .interview .more {
+        left: auto;
+        right: 0;
+        top: 67px;
+    }
+    .interview .more a {
+        font-size: 13px;
+        width: 55px;
+        line-height: 25px;
+        border-radius: 20px;
+        padding: 0;
+        text-align: center;
+    }
+    .interview .more a::after {
+        display: none;
+    }
+}/*m*/
+
+.news {
+    background: url(../images/new_bg.png) no-repeat center center / cover;
+    color: #fff;
+    padding: 0 0 100px 0;
+}
+.news .inner {
+    position: relative; /* .more 정렬의 기준 */
+}
+.news .tit {
+    position: sticky;
+    top: 200px; 
+    /* 상단에 고정되었을때 맨 상단에서부터 (header 무시) 
+        아래로 배치되고 싶은 값 - 고정되기 전에는 이 값의 영향이 없음 */
+    /* 주의사항 : 감싸는 요소가 overflow:hodden 이 있으면 안됨 */
+    float: left;
+    margin: 100px 0 0 0;
+}
+.news .tit h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+.news .list {
+    margin: 0 0 0 426px;
+    padding-top: 200px;
+}
+.news .list ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.news .list ul li {
+    width: 408px;
+    margin-bottom: 74px;
+}
+.news .list ul li:nth-child(2n) {
+    margin-top: -100px; /* margin만 -(마이너스) 여백 가능 */
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a span {
+    overflow: hidden;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+}
+.news .list ul li a span img {
+    transition: 0.5s;
+}
+.news .list ul li a:hover span img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.news .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+.news .list ul li a p {
+    line-height: 1.2;
+    height: 3.6em;
+    overflow: hidden;
+}
+.news .more {
+    position: absolute;
+    left: 0;
+    top: 304px;
+}
+.news .more a {
+    width: 150px;
+    line-height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: block;
+    padding: 0 0 0 14px;
+    position: relative; /* after 정렬의 기준 */
+    transition: 0.3s;
+}
+.news .more a::after {
+    position: absolute; /* a를 기준으로 정렬 */
+    right: 8px;
+    top: 11px;
+    width: 15px;
+    height: 15px;
+    content: "";
+    transition: 0.3s;
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.00956 13.5336L4.12256 12.6466L9.2692 7.49995L4.12256 2.35331L5.00956 1.46631L11.0432 7.49995L5.00956 13.5336Z' fill='%23777777'/%3E%3C/svg%3E%0A");
+}
+.news .more a:hover {
+    background-color: #674126;
+    border: 1px solid #674126;
+    color: #fff;
+}
+.news .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.00956 13.5336L4.12256 12.6466L9.2692 7.49995L4.12256 2.35331L5.00956 1.46631L11.0432 7.49995L5.00956 13.5336Z' fill='white'/%3E%3C/svg%3E%0A");
+    animation-name: more; 
+    animation-duration: 1.2s; 
+    animation-iteration-count: infinite; 
+    animation-timing-function: linear;
+}
+@media screen and (max-width:640px){
+    .news {
+        padding: 0 0 50px 0;
+    }
+    .news .tit {
+        position: relative;
+        top: auto; 
+        /* 상단에 고정되었을때 맨 상단에서부터 (header 무시) 
+            아래로 배치되고 싶은 값 - 고정되기 전에는 이 값의 영향이 없음 */
+        /* 주의사항 : 감싸는 요소가 overflow:hodden 이 있으면 안됨 */
+        float: none;
+        margin: 0;
+        padding: 40px 0 0 0;
+    }
+    .news .tit br {
+        display: none;
+    }
+    .news .tit h2 {
+        font-size: 25px;
+        margin: 0 0 8px 0;
+    }
+    .news .list {
+        margin: 0;
+        padding-top: 18px;
+        overflow-x: auto;
+    }
+    .news .list ul {
+        flex-wrap: nowrap;
+        /* li의 넓이 250 * li의 갯수 6 = 1500
+            li 사이의 여백 16px * li의 갯수 -1 (5) = 80
+            1500 + 80 = 1580 */
+        width: 1580px;
+    }
+    .news .list ul li {
+        width: 250px;
+        margin-bottom: 0;
+    }
+    .news .list ul li:nth-child(2n) {
+        margin-top: 0; /* margin만 -(마이너스) 여백 가능 */
+    }
+    .news .list ul li a span img {
+        width: 100%; 
+    }
+    .news .list ul li a h3 {
+        font-size: 17px;
+        margin: 8px 0;
+    }
+    .news .more {
+        left: auto;
+        right: 0;
+        top: 67px;
+    }
+    .news .more a {
+        font-size: 13px;
+        width: 55px;
+        line-height: 25px;
+        border-radius: 20px;
+        padding: 0;
+        text-align: center;
+    }
+    .news .more a::after {
+       display: none;
+    }
+}/*m*/
+
+.footer { 
+    background-color: #674126;
+    color: #fff;
+    padding: 98px 0 110px 0;
+}
+.footer .inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative; /* copyright 정렬의 기준 */
+}
+.footer .footer_txt {
+    font-size: 25px;
+}
+.footer .footer_txt strong {
+    font-weight: 700;
+}
+.footer .footer_info strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+}
+.footer .footer_info strong + span {
+    margin-top: 49px;
+}
+.footer .footer_info span {
+    display: block;
+}
+.footer .copyright {
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }

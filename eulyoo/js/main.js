@@ -50,20 +50,32 @@ $(document).ready(function(){
         다시 상단으로 이동하면 fixed 클래스 삭제 
         -- 스크롤 값을 아는게 필요함 */
 
-        let scrolling //브라우저가 스크롤된 값을 저장
+    let scrolling //브라우저가 스크롤된 값을 저장
 
-        function scroll_chk(){ //함수의 선언
-            scrolling = $(window).scrollTop() //브라우저가 스크롤된 값을 scrolling에 저장
-            console.log(scrolling)
-            if(scrolling >0){ //스크롤을 내렸을때
-                $('.header').addClass('fixed')
-            }else{ // 스크롤이 맨위에 있는 경우
-                $('.header').removeClass('fixed')
-            }
+    function scroll_chk(){ //함수의 선언
+        scrolling = $(window).scrollTop() //브라우저가 스크롤된 값을 scrolling에 저장
+        console.log(scrolling)
+        if(scrolling >0){ //스크롤을 내렸을때
+            $('.header').addClass('fixed')
+        }else{ // 스크롤이 맨위에 있는 경우
+            $('.header').removeClass('fixed')
         }
-        scroll_chk() //함수의 실행 -- 브라우저가 로딩되었을때 단 1번 실행
+    }
+    scroll_chk() //함수의 실행 -- 브라우저가 로딩되었을때 단 1번 실행
 
-        $(window).scroll(function(){
-            scroll_chk() // 함수의 실행 -- 스크롤 할때마다
-        })
+    $(window).scroll(function(){
+        scroll_chk() // 함수의 실행 -- 스크롤 할때마다
+    })
+
+    /* 을유 을터뷰에서 하나의 li에 active가 이미 있는 상태
+        마우스를 오버하면 오버한 li에 active 클래스 추가
+        (이전에 오버했던 li의 active 클래스는 삭제) 
+        이전에 오버했던 li를 계산하는 것보다 (힘듬)
+        모든 li의 active를 지워버림 -> 오버한 li에만 다시 active 클래스를 줌 */
+    
+    $('.interview .list ul li').on('mouseenter', function(){
+        $('.interview .list ul li').removeClass('active')
+        $(this).addClass('active')
+    })
+
 })

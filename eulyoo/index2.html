@@ -146,8 +146,11 @@
                         <!-- 무조건 하나가 over 상태의 디자인을 유지 
                             마우스를 오버하면 오버 대상 변경
                             마우스를 아웃하면 마지막에 마우스를 올렸던 요소가 
-                            over 상태를 유지 -->
-                        <li>
+                            over 상태를 유지 
+                            처음에는 하나의 li에 active 클래스가 들어가 있는 상태고
+                            다른 요소에 마우스를 오버하면 해당 li에만 active클래스가 추가되는 방식
+                            (기존 li의 active 클래스는 삭제)-->
+                        <li class="active">
                             <a href="#n">
                                 <div class="photo"><img src="images/interview01.png" alt="서양고전학자 김헌 사진">
                                 </div>
@@ -187,8 +190,95 @@
                 </div>
             </div>
         </section>
-        <section class="news"></section>
-        <footer class="footer"></footer>
+        <section class="news">
+            <div class="wrapper">
+                <div class="inner">
+                    <div class="tit">
+                        <h2>을유의 <br>소식</h2>
+                        <p>을유문화사의 <br>새로운 소식을 만나보세요.</p>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <span><img src="images/new01.png"></span>
+                                    <h3>아우구스트 스트린드베리, 『꿈의 연극』</h3>
+                                    <p>입센은 조용히 그의 「인형의 집」에서 쉴 수 있지만 스트린드베리는 천국과 지옥을 상대로 치열한 싸움을 하고 있다. 입센은 조용히 그의 「인형의 집」에서 쉴 수 있지만 스트린드베리는 천국과 지옥을 상대로 치열한 싸움을 하고 있다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <span><img src="images/new02.png"></span>
+                                    <h3>찰스 밍거스, 『소리와 분노』</h3>
+                                    <p>제2차 세계대전 이후 르네상스 시대에 인종주의에 대한 노골적인 반감을 드러내며 살았던 한 인간의 내면이 생생하게 펼쳐진다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <span><img src="images/new03.png"></span>
+                                    <h3>아르투어 쇼펜하우어, 『쇼펜하우어의 행복론과 인생론』</h3>
+                                    <p>쇼펜하우어 철학이 마침내 19세기 중반부터 유럽을 석권하게 되었고, 니체와 프로이트, 채플린에게까지 큰 영향을 주었다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <span><img src="images/new04.png"></span>
+                                    <h3>제임스 조지 프레이저, 『황금가지 제1권 | 제2권』</h3>
+                                    <p>고대인의 삶은 단순하다는 일반적인 통념을 뿌리치고, 원시 인류가 복잡한 마술과 금기, 미신과 얽혀 있음을 보여 준다. </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <span><img src="images/new05.png"></span>
+                                    <h3>토머스 모어, 『유토피아』</h3>
+                                    <p>어느 지역에 물자가 부족하고 어느 지역에 잉여가 있는지 조사한 후 곧바로 한 곳의 부족분을 다른 곳의 잉여분으로 채워 줍니다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <span><img src="images/new06.png"></span>
+                                    <h3>황견, 『고문진보 전집｜고문진보 후집』</h3>
+                                    <p>아미산의 반달이 가을 밤하늘에 떠 있는데, 달그림자 평강강에 어리어 강물 따라 흘러가네.</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="more"><a href="#n">더보기</a></div>
+                </div>
+            </div><!--wrapper-->
+        </section>
+        <footer class="footer">
+            <div class="wrapper">
+                <div class="inner">
+                    <!-- 만약 pc와 모바일의 순서가 다르면 모바일 순서를 따름 -->
+                    <div class="footer_txt">
+                        출판은 <br>
+                        이윤을 추구하는 사업보다는 <br>
+                        사회에 공헌하는 <strong>문화 사업</strong>
+                    </div>
+                    <div class="footer_info">
+                        <strong>위치</strong>
+                        <span>03997 서울 마포구 서교동 469-48(월드컵로16길 52-7)</span>
+                        <strong>연락처</strong>
+                        <span>전화번호: 02-733-8153<br>
+                            팩스: 02-732-9154<br>
+                            메일: eulyoo1945@eulyoo.co.kr</span>
+                            <strong>소셜네트워크</strong>
+                            <span>
+                                <!-- 다른 홈페이지로 이동 반드시 target="+blank" 새창으로 연결
+                                target="_blank"가 포함되면 반드시 title="새창"으로 새창으로 열리는 사이트임을 공지해야함(웹접근성) -->
+                                <a href="https://m.post.naver.com/my.nhn?memberNo=20168227" target="_blank" title="새창">블로그</a>
+                                <a href="https://www.instagram.com/eulyoo/" target="_blank" title="새창">인스타그램</a>
+                                <a href="https://www.facebook.com/eulyoo/" target="_blank" title="새창">페이스북</a>
+                            </span>
+                    </div>
+                    <div class="copyright">
+                        <img src="images/logo_w.png" alt="을유문화사">
+                        <span>© 2020 EULYOO PUBLISHING CO., LTD.</span>
+                    </div>
+                </div>
+            </div><!--wrapper-->
+        </footer>
     </div>
 </body>
 </html>
