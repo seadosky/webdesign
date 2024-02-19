@@ -1,4 +1,20 @@
 $(document).ready(function(){
+
+    let device_status
+    let window_w
+    function device_chk(){
+        window_w = $(window).width()
+        if(window_w > 640){
+            device_status = 'pc'
+        }else{
+            device_status = 'mobile'
+        }
+        console.log(device_status)
+    }
+    device_chk() /* html 로딩 후 */
+    $(window).resize(function(){
+        device_chk() //브라우저가 리사이즈 될때마다 1번씩
+    })
     
     //visual 팝업을 작동시키는 라이브러리
     const swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
@@ -78,4 +94,43 @@ $(document).ready(function(){
         $(this).addClass('active')
     })
 
+    /* pc버전에서 메뉴에 마우스를 오버하면 header에 menu_over 클래스 추가
+        tab버튼으로 메뉴 이동이 가능해야함 */
+
+    $('.header .gnb').on('mouseenter focusin', function(){
+        $('.header').addClass('menu_over')
+    })
+    $('.header .gnb').on('mouseleave', function(){
+        $('.header').removeClass('menu_over')
+    })
+    /* 메뉴 다음 버튼이 포커스가 되면 메뉴를 아웃시킴 */
+    $('.header .tnb .login').on('focusin', function(){
+        $('.header').removeClass('menu_over')
+    })
+
+    /* 모바일 메뉴
+        .header .gnb .gnb_open 를 클릭하면 메뉴가 열림
+        -- header에 menu_open 클래스 추가
+        .header .gnb .gnb_close 를 클릭하면 메뉴가 닫힘
+        -- header에 menu_open 클래스 삭제
+        1차 메뉴를 클릭하면 하위메뉴 열리는데
+            해당 li에 sub_open 클래스 추가
+            이미 열린 메뉴를 다시 클릭하면 닫힘
+            1차 메뉴 클릭(href)를 무력화 - 안눌리게 .. 이동 안하게
+    */
+
+     $('.header .gnb .gnb_open').on('click', function(){
+        $('.header').addClass('menu_open')
+     })
+     $('.header .gnb .gnb_close').on('click', function(){
+        $('.header').removeClass('menu_open')
+     })
+     
+     $('.header .gnb ul.depth1 > li > a').on('click', function(e){
+        if(device_status == 'mobile'){ //모바일 일때만 실행
+            e.preventDefault(); //href 링크를 없앰
+            $(this).parent().toggleClass('sub_open')
+        }
+            
+     })
 })

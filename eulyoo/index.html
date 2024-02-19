@@ -12,18 +12,27 @@
     <title>을유문화사</title>
 </head>
 <body>
+    <div class="skipnav">
+        <!-- href=#container 라고 입력하면 id="container"인 요소로 이동 (페이지내 이동)
+             href="gnb" 라고 입력하면 id="gnb"인 요소로 이동 -->
+        <a href="#container">본문 바로가기</a>
+        <a href="#gnb">대메뉴 바로가기</a>
+    </div>
     <div id="wrap">
-        <!-- 스크롤을 내리면 jquery에서 header에 fixed라는 클래스를 추가해줌 -->
+        <!-- 스크롤을 내리면 jquery에서 header에 fixed라는 클래스를 추가해줌 
+            pc버전 마우스 오버 menu_over 클래스 추가
+            mobile버전 메뉴 클릭 menu_open 클래스 추가 -->
         <header class="header">
             <div class="wrapper">
                 <div class="inner">
                     <h1 class="logo"><a href="index.html">을유문화사</a></h1>
-                    <nav class="gnb">
+                    <nav class="gnb" id="gnb"> 
+                        <!--skip navigation에서 대메뉴 바로가기를 누르면 이쪽으로 이동 -->
                         <button class="gnb_open">메뉴열기</button>
                         <div class="gnb_wrap">
                             <ul class="depth1">
                                 <li>
-                                    <a href="#n">을유문화사</a>
+                                    <a href="http://www.eulyoo.co.kr/"><span>을유문화사</span></a>
                                     <ul class="depth2">
                                         <li><a href="#n">인사말</a></li>
                                         <li><a href="#n">출판사 소개</a></li>
@@ -32,7 +41,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#n">콘텐츠</a>
+                                    <a href="http://www.eulyoo.co.kr/"><span>콘텐츠</span></a>
                                     <ul class="depth2">
                                         <li><a href="#n">전체 도서</a></li>
                                         <li><a href="#n">베스트셀러</a></li>
@@ -40,7 +49,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#n">을유소식</a>
+                                    <a href="http://www.eulyoo.co.kr/"><span>을유소식</span></a>
                                     <ul class="depth2">
                                         <li><a href="#n">새소식</a></li>
                                         <li><a href="#n">자료실</a></li>
@@ -48,7 +57,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#n">독자참여</a>
+                                    <a href="http://www.eulyoo.co.kr/"><span>독자참여</span></a>
                                     <ul class="depth2">
                                         <li><a href="#n">원고 투고</a></li>
                                         <li><a href="#n">오탈자신고</a></li>
@@ -66,65 +75,122 @@
                 </div>
             </div><!--wrapper-->
         </header>
-        <section class="visual">
-            <div class="swiper">
-                <ul class="swiper-wrapper">
-                    <li class="swiper-slide"><img src="images/visual01.png" alt="책 사진"></li>
-                    <!-- 팝업마다 문구가 다른 경우 -->
-                    <li class="swiper-slide"><img src="images/visual02.png" alt="손에든 책 사진"></li>
-                    <li class="swiper-slide"><img src="images/visual03.png" alt="책꽂이 사진"></li>
-                </ul>
-                <div class="pagination"></div> <!-- 팝업 수대로 동그라미-->
-                <button class="prev">이전팝업보기</button> <!-- 이전팝업보기-->
-                <button class="next">다음팝업보기</button> <!-- 다음팝업보기-->
-                <button class="stop">일시정지</button> <!--일시정지-->
-                <button class="play">실행</button> <!--재생-->
-            </div>
-            <!-- 팝업문구가 고정-->
-            <div class="visual_txt">
-                <h2>1945년(을유년)</h2>
-                <p>을유문화사는 광복의 감격과 의의를 기리며<br>
-                    ‘출판은 곧 건국 사업’이라는 사명감으로 첫발을 내딛었다</p>
-                <span>乙酉文化社</span>
-            </div>
-        </section>
-        <section class="book">
-            <div class="wrapper">
-                <div class="inner">
+        <div class="container" id="container"> <!-- skipnav에서 본문 바로가기로 이쪽으로 이동 -->    
+            <section class="visual">
+                <div class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><img src="images/visual01.png" alt="책 사진"></li>
+                        <!-- 팝업마다 문구가 다른 경우 -->
+                        <li class="swiper-slide"><img src="images/visual02.png" alt="손에든 책 사진"></li>
+                        <li class="swiper-slide"><img src="images/visual03.png" alt="책꽂이 사진"></li>
+                    </ul>
+                    <div class="pagination"></div> <!-- 팝업 수대로 동그라미-->
+                    <button class="prev">이전팝업보기</button> <!-- 이전팝업보기-->
+                    <button class="next">다음팝업보기</button> <!-- 다음팝업보기-->
+                    <button class="stop">일시정지</button> <!--일시정지-->
+                    <button class="play">실행</button> <!--재생-->
+                </div>
+                <!-- 팝업문구가 고정-->
+                <div class="visual_txt">
+                    <h2>1945년(을유년)</h2>
+                    <p>을유문화사는 광복의 감격과 의의를 기리며<br>
+                        ‘출판은 곧 건국 사업’이라는 사명감으로 첫발을 내딛었다</p>
+                    <span>乙酉文化社</span>
+                </div>
+            </section>
+            <section class="book">
+                <div class="wrapper">
+                    <div class="inner">
+                        <div class="tit">
+                            <h2>이달의 <br>도서</h2>
+                            <p>을유문화사에서 <br>발간된 도서목록입니다.</p>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/book01.png" alt="책표지"></span>
+                                        <h3>바라본 후에 다스리는 마음 </h3>
+                                        <p>언제 터질지 모르는 시한폭탄을 안고 사는 현대인의 동반자 위상을 차지한 명상</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/book02.png" alt="책표지"></span>
+                                        <h3>단순한 과거</h3>
+                                        <p>“나의 종교는 반항이었다.”
+                                            이슬람 사회와 서양 문명을 향한 통렬한 비판</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/book03.png" alt="책표지"></span>
+                                        <h3>우리가 작별 인사를 할 때마다</h3>
+                                        <p>뉴욕 타임스 칼럼니스트가 자연으로부터 배운
+                                            상실과 사랑에 관한 이야기</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/book04.png" alt="책표지"></span>
+                                        <h3>하이네 여행기</h3>
+                                        <p>낭만주의의 마지막 시인이자 현대 독일 시의 선구자 하인리히 하이네의 대표작</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="more">
+                            <a href="#n">더보기</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="interview">
+                <div class="wrapper">
                     <div class="tit">
-                        <h2>이달의 <br>도서</h2>
-                        <p>을유문화사에서 <br>발간된 도서목록입니다.</p>
+                        <h2>월간 을터뷰</h2>
+                        <p>을유문화사에서 만난 사람들의 이야기</p>
                     </div>
                     <div class="list">
                         <ul>
-                            <li>
+                            <!-- 무조건 하나가 over 상태의 디자인을 유지 
+                                마우스를 오버하면 오버 대상 변경
+                                마우스를 아웃하면 마지막에 마우스를 올렸던 요소가 
+                                over 상태를 유지 
+                                처음에는 하나의 li에 active 클래스가 들어가 있는 상태고
+                                다른 요소에 마우스를 오버하면 해당 li에만 active클래스가 추가되는 방식
+                                (기존 li의 active 클래스는 삭제)-->
+                            <li class="active">
                                 <a href="#n">
-                                    <span><img src="images/book01.png" alt="책표지"></span>
-                                    <h3>바라본 후에 다스리는 마음 </h3>
-                                    <p>언제 터질지 모르는 시한폭탄을 안고 사는 현대인의 동반자 위상을 차지한 명상</p>
+                                    <div class="photo"><img src="images/interview01.png" alt="서양고전학자 김헌 사진">
+                                    </div>
+                                    <div class="cnt">
+                                        <h3>서양고전학자 김헌</h3>
+                                        <p>신화를 읽는 일이 우리 현대 사회를 이해하고, 주도해 나가는 데 중요한 역할을 할 수 있습니다.</p>
+                                        <span>자세히보기</span>
+                                    </div>
                                 </a>
                             </li>
                             <li>
                                 <a href="#n">
-                                    <span><img src="images/book02.png" alt="책표지"></span>
-                                    <h3>단순한 과거</h3>
-                                    <p>“나의 종교는 반항이었다.”
-                                        이슬람 사회와 서양 문명을 향한 통렬한 비판</p>
+                                    <div class="photo"><img src="images/interview02.png" alt="건축가 유현준 사진">
+                                    </div>
+                                    <div class="cnt">
+                                        <h3>건축가 유현준</h3>
+                                        <p>건물들 하나하나는 일종의 혁명이기도 하고 동시에 깨달음을 주는 철학적인 건축의 모습인 것 같아요.</p>
+                                        <span>자세히보기</span>
+                                    </div>
                                 </a>
                             </li>
                             <li>
                                 <a href="#n">
-                                    <span><img src="images/book03.png" alt="책표지"></span>
-                                    <h3>우리가 작별 인사를 할 때마다</h3>
-                                    <p>뉴욕 타임스 칼럼니스트가 자연으로부터 배운
-                                        상실과 사랑에 관한 이야기</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#n">
-                                    <span><img src="images/book04.png" alt="책표지"></span>
-                                    <h3>하이네 여행기</h3>
-                                    <p>낭만주의의 마지막 시인이자 현대 독일 시의 선구자 하인리히 하이네의 대표작</p>
+                                    <div class="photo"><img src="images/interview03.png" alt="한국외대 교수 신근혜 사진">
+                                    </div>
+                                    <div class="cnt">
+                                        <h3>한국외대 교수 신근혜</h3>
+                                        <p>'그림의 이면'은 오늘날까지도 꾸준하게 태국인들에게도 작품성과 대중성을 인정받은 작품이에요.</p>
+                                        <span>자세히보기</span>
+                                    </div>
                                 </a>
                             </li>
                         </ul>
@@ -133,120 +199,65 @@
                         <a href="#n">더보기</a>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="interview">
-            <div class="wrapper">
-                <div class="tit">
-                    <h2>월간 을터뷰</h2>
-                    <p>을유문화사에서 만난 사람들의 이야기</p>
-                </div>
-                <div class="list">
-                    <ul>
-                        <!-- 무조건 하나가 over 상태의 디자인을 유지 
-                            마우스를 오버하면 오버 대상 변경
-                            마우스를 아웃하면 마지막에 마우스를 올렸던 요소가 
-                            over 상태를 유지 
-                            처음에는 하나의 li에 active 클래스가 들어가 있는 상태고
-                            다른 요소에 마우스를 오버하면 해당 li에만 active클래스가 추가되는 방식
-                            (기존 li의 active 클래스는 삭제)-->
-                        <li class="active">
-                            <a href="#n">
-                                <div class="photo"><img src="images/interview01.png" alt="서양고전학자 김헌 사진">
-                                </div>
-                                <div class="cnt">
-                                    <h3>서양고전학자 김헌</h3>
-                                    <p>신화를 읽는 일이 우리 현대 사회를 이해하고, 주도해 나가는 데 중요한 역할을 할 수 있습니다.</p>
-                                    <span>자세히보기</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#n">
-                                <div class="photo"><img src="images/interview02.png" alt="건축가 유현준 사진">
-                                </div>
-                                <div class="cnt">
-                                    <h3>건축가 유현준</h3>
-                                    <p>건물들 하나하나는 일종의 혁명이기도 하고 동시에 깨달음을 주는 철학적인 건축의 모습인 것 같아요.</p>
-                                    <span>자세히보기</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#n">
-                                <div class="photo"><img src="images/interview03.png" alt="한국외대 교수 신근혜 사진">
-                                </div>
-                                <div class="cnt">
-                                    <h3>한국외대 교수 신근혜</h3>
-                                    <p>'그림의 이면'은 오늘날까지도 꾸준하게 태국인들에게도 작품성과 대중성을 인정받은 작품이에요.</p>
-                                    <span>자세히보기</span>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="more">
-                    <a href="#n">더보기</a>
-                </div>
-            </div>
-        </section>
-        <section class="news">
-            <div class="wrapper">
-                <div class="inner">
-                    <div class="tit">
-                        <h2>을유의 <br>소식</h2>
-                        <p>을유문화사의 <br>새로운 소식을 만나보세요.</p>
+            </section>
+            <section class="news">
+                <div class="wrapper">
+                    <div class="inner">
+                        <div class="tit">
+                            <h2>을유의 <br>소식</h2>
+                            <p>을유문화사의 <br>새로운 소식을 만나보세요.</p>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/new01.png" alt="꿈의 연극 표지"></span>
+                                        <h3>아우구스트 스트린드베리, 『꿈의 연극』</h3>
+                                        <p>입센은 조용히 그의 「인형의 집」에서 쉴 수 있지만 스트린드베리는 천국과 지옥을 상대로 치열한 싸움을 하고 있다. </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/new02.png" alt="악기 사진"></span>
+                                        <h3>찰스 밍거스, 『소리와 분노』</h3>
+                                        <p>제2차 세계대전 이후 르네상스 시대에 인종주의에 대한 노골적인 반감을 드러내며 살았던 한 인간의 내면이 생생하게 펼쳐진다.</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/new03.png" alt="맞잡은 두 손 사진"></span>
+                                        <h3>아르투어 쇼펜하우어, 『쇼펜하우어의 행복론과 인생론』</h3>
+                                        <p>쇼펜하우어 철학이 마침내 19세기 중반부터 유럽을 석권하게 되었고, 니체와 프로이트, 채플린에게까지 큰 영향을 주었다.</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/new04.png" alt="고대 그림 사진"></span>
+                                        <h3>제임스 조지 프레이저, 『황금가지 제1권 | 제2권』</h3>
+                                        <p>고대인의 삶은 단순하다는 일반적인 통념을 뿌리치고, 원시 인류가 복잡한 마술과 금기, 미신과 얽혀 있음을 보여 준다. </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/new05.png" alt="일몰 바닷가 사진"></span>
+                                        <h3>토머스 모어, 『유토피아』</h3>
+                                        <p>어느 지역에 물자가 부족하고 어느 지역에 잉여가 있는지 조사한 후 곧바로 한 곳의 부족분을 다른 곳의 잉여분으로 채워 줍니다.</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#n">
+                                        <span><img src="images/new06.png" alt="안개진 산 사진"></span>
+                                        <h3>황견, 『고문진보 전집｜고문진보 후집』</h3>
+                                        <p>아미산의 반달이 가을 밤하늘에 떠 있는데, 달그림자 평강강에 어리어 강물 따라 흘러가네.</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="more"><a href="#n">더보기</a></div>
                     </div>
-                    <div class="list">
-                        <ul>
-                            <li>
-                                <a href="#n">
-                                    <span><img src="images/new01.png" alt="꿈의 연극 표지"></span>
-                                    <h3>아우구스트 스트린드베리, 『꿈의 연극』</h3>
-                                    <p>입센은 조용히 그의 「인형의 집」에서 쉴 수 있지만 스트린드베리는 천국과 지옥을 상대로 치열한 싸움을 하고 있다. </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#n">
-                                    <span><img src="images/new02.png" alt="악기 사진"></span>
-                                    <h3>찰스 밍거스, 『소리와 분노』</h3>
-                                    <p>제2차 세계대전 이후 르네상스 시대에 인종주의에 대한 노골적인 반감을 드러내며 살았던 한 인간의 내면이 생생하게 펼쳐진다.</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#n">
-                                    <span><img src="images/new03.png" alt="맞잡은 두 손 사진"></span>
-                                    <h3>아르투어 쇼펜하우어, 『쇼펜하우어의 행복론과 인생론』</h3>
-                                    <p>쇼펜하우어 철학이 마침내 19세기 중반부터 유럽을 석권하게 되었고, 니체와 프로이트, 채플린에게까지 큰 영향을 주었다.</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#n">
-                                    <span><img src="images/new04.png" alt="고대 그림 사진"></span>
-                                    <h3>제임스 조지 프레이저, 『황금가지 제1권 | 제2권』</h3>
-                                    <p>고대인의 삶은 단순하다는 일반적인 통념을 뿌리치고, 원시 인류가 복잡한 마술과 금기, 미신과 얽혀 있음을 보여 준다. </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#n">
-                                    <span><img src="images/new05.png" alt="일몰 바닷가 사진"></span>
-                                    <h3>토머스 모어, 『유토피아』</h3>
-                                    <p>어느 지역에 물자가 부족하고 어느 지역에 잉여가 있는지 조사한 후 곧바로 한 곳의 부족분을 다른 곳의 잉여분으로 채워 줍니다.</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#n">
-                                    <span><img src="images/new06.png" alt="안개진 산 사진"></span>
-                                    <h3>황견, 『고문진보 전집｜고문진보 후집』</h3>
-                                    <p>아미산의 반달이 가을 밤하늘에 떠 있는데, 달그림자 평강강에 어리어 강물 따라 흘러가네.</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="more"><a href="#n">더보기</a></div>
-                </div>
-            </div><!--wrapper-->
-        </section>
+                </div><!--wrapper-->
+            </section>
+        </div>
         <footer class="footer">
             <div class="wrapper">
                 <div class="inner">
