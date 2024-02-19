@@ -994,7 +994,7 @@ html, body {
 }/*m*/
 
 .footer { 
-    background-color: #674126;
+    background-color: #231815;
     color: #fff;
     padding: 98px 0 110px 0;
 }
@@ -1015,16 +1015,68 @@ html, body {
     font-weight: 700;
 }
 .footer .footer_info span + strong {
-    margin-top: 49px;
+    margin-top: 59px;
 }
+/* 인접선택자 
+.footer .footer_info span 다음에 오는 strong태그 */
 .footer .footer_info span {
     display: block;
+    margin-top: 10px;
+}
+.footer .footer_info span a {
+    margin: 0 5px 0 0;
 }
 .footer .copyright {
     position: absolute;
     left: 0;
     bottom: 0;
 }
+.footer .copyright img {
+    width: 286px;
+}
 .footer .copyright span {
     display: block;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.8);
 }
+
+@media screen and (max-width:640px){
+    .footer { 
+        padding: 40px 0 50px 0;
+    }
+    .footer .inner {
+        display: block; /* txt, info 좌우로 배치 해제 */
+    }
+    .footer .footer_txt {
+        font-size: 22px;
+    }
+    .footer .footer_info {
+        margin-top: 30px;
+    }
+    .footer .footer_info strong {
+        font-size: 15px;
+    }
+    .footer .footer_info span + strong {
+        margin-top: 30px;
+    }
+    .footer .footer_info span {
+        margin-top: 8px;
+    }
+    .footer .footer_info span a {
+        margin: 0 5px 0 0;
+    }
+    .footer .copyright {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin: 42px 0 0 0;
+    }
+    .footer .copyright img {
+        width: 209px;
+    }
+    .footer .copyright span {
+        display: block;
+        margin-top: 10px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+}/*m*/
