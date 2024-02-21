@@ -1010,7 +1010,7 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
 }
 .news .list ul li {
     width: 408px;
-    margin-bottom: 74px;
+    margin-bottom: 50px;
 }
 .news .list ul li:nth-child(2n) {
     margin-top: -100px; /* margin만 -(마이너스) 여백 가능 */
@@ -1033,7 +1033,7 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
 .news .list ul li a h3 {
     font-size: 20px;
     font-weight: 700;
-    margin: 10px 0;
+    margin: 15px 0 10px 0;
 }
 .news .list ul li a p {
     line-height: 1.2;
@@ -1184,7 +1184,7 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
 }
 .footer .copyright span {
     display: block;
-    margin-top: 10px;
+    margin-top: 12px;
     color: rgba(255, 255, 255, 0.8);
 }
 

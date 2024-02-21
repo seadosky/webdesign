@@ -959,6 +959,9 @@ border: 1px solid rgba(255, 255, 255, 0.6);
 .footer .f_top .f_nav ul li:last-child:after { /* 마지막 동그라미 숨김처리 */
     display: none;
 }
+.footer .f_top .f_nav ul li.privacy {
+    font-weight: 700;
+}
 .footer .f_btm {
     margin-top: 20px;
 }
