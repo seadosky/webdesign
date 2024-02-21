@@ -1,0 +1,107 @@
+@charset "utf-8"; /* 이 css문서는 UTF-8방식으로 인코딩되어 있습니다. */
+@import url(default.css);
+/* 한글 웹폰트 */
+@font-face { 
+    font-family:'S-CoreDream'; 
+    src:url('../fonts/S-CoreDream-4Regular.woff') format('woff'); 
+    font-weight:400; 
+    font-style:normal; 
+}
+@font-face { 
+    font-family:'S-CoreDream'; 
+    src:url('../fonts/S-CoreDream-7ExtraBold.woff') format('woff'); 
+    font-weight:700; 
+    font-style:normal; 
+}
+/* 영문 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+*::selection{
+    background-color: #3d3d3d;
+    color: #fff;
+}
+*::-moz-selection { /* 호환성을 위한 코드 */
+    background-color: #3d3d3d;
+    color: #fff;
+}
+/*
+    영문, 숫자는 영문 폰트를 사용하고 한글만 한국어 폰트를 사용하고 싶을때 
+    (단, 영문 폰트로 선택한 폰트는 한국어가 지원되는 폰트면 안됨)
+    둘 다 폰트파일을 불러오고 (import, font-face)
+    body에서 폰트를 정의할때 맨 먼저 무조건 영문폰트를 먼저 선언
+    영어, 숫자만 영문폰트가 적용되고 한글은 지원되지 않기 때문에 다음에 선언된 한글폰트가 적용됨
+    앞에 폰트가 지원안되면 다음폰트, 다음폰트 순서대로 적용
+*/
+html, body {
+    font-family: 'Arimo','S-CoreDream', sans-serif; /* 서체 serif 명조 sans-serif 고딕 */
+    font-size: 15px; 
+    color: #001000;
+    font-weight: 400;
+    line-height: 1.2; 
+    word-break: keep-all;
+    word-wrap: break-word; /* 만약 단어가 엄청 길면 분리해서 줄바꿈 */
+}
+.wrapper { /* 홈페이지 넓이를 제한하고 가운데 정렬 */
+    width: 1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    width: 1280px;  
+    overflow: hidden;
+    /* 콘텐츠 영역 밖에 나간 요소를 숨김 */
+}
+
+/* wrapper의 사이즈 1280 + 40px (좌우여백) = 1320 */
+@media screen and (max-width:1320px){
+    .wrapper { 
+        width: auto;
+        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨
+            디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에
+            그 안쪽으로 좌우 여백이 20px씩 들어가게 함.  */
+        margin: 0 20px; 
+    }
+}/*media*/
+@media screen and (max-width:640px){
+    html, body {
+        font-size: 13px; 
+    }
+    .wrapper { 
+        width: auto;
+        /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨
+            디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문에
+            그 안쪽으로 좌우 여백이 20px씩 들어가게 함.  */
+        margin: 0 20px; 
+    }
+    #wrap { 
+        min-width:auto;  /* 홈페이지의 최소넓이 제한하지 않음 */
+    }
+}/*media*/
+
+.skipnav {
+    position: absolute;
+    left: 0;
+    top: -100px;
+    z-index: 10000000000;
+    width: 100%;
+}
+.skipnav a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    background-color: #0AB6C1;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+}
+/* 속성선택자
+a태그중에서 href="gnb"인 a태그의 스타일 */
+.skipnav a[href="#gnb"] {
+    background-color: #BE0AC1;
+}
+.skipnav a:focus {
+    top: 100px;
+}
+
