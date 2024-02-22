@@ -11,9 +11,50 @@
 </head>
 <body>
     <div id="wrap">
-        <div class="wrapper">
-            
-        </div>
+        <!-- 메뉴에 마우스를 올리면 header에 menu_over 클래스 추가 -->
+        <header class="header">
+            <h1 class="logo"><a href="index.html">동물보호센터</a></h1>
+            <nav class="gnb">
+                <button class="gnb_open">메뉴열기</button>
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <!-- 메뉴에 마우스를 올리면 li에 sub_over 클래스 추가 -->
+                        <li>
+                            <a href="#n">찾습니다</a>
+                            <ul class="depth2">
+                                <li><a href="#n">분실신고</a></li>
+                                <li><a href="#n">구조정보·목격담</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#n">구조분양</a></li>
+                        <li><a href="#n">네트워크</a></li>
+                        <li><a href="#n">재회성공담</a></li>
+                        <li>
+                            <a href="#n">대처방법</a>
+                            <ul class="depth2">
+                                <li><a href="#n">실종시 대처방법</a></li>
+                                <li><a href="#n">구조시 대처방법</a></li>
+                                <li><a href="#n">고양이에 대해</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="gnb_close">메뉴닫기</button>
+            </nav>
+            <div class="tnb">
+                <a href="#n" class="search">검색</a>
+                <!-- 다른 홈페이지로 링크의 경우 반드시 새창으로 (target="_blank") 링크를 걸어줘야함 
+                    새창으로 링크를 걸때는 title -->
+                <a href="http://dogcat-e.com/index.php?code=apply" target="_blank" title="새창링크" class="paper">전단지</a>
+            </div>
+        </header>
+        <div class="container">
+            <section class="visual"></section>
+            <section class="lost"></section>
+            <section class="msg"></section>
+            <section class="adopt"></section>
+        </div><!--contatiner-->
+        <footer class="footer"></footer>
     </div>
 </body>
 </html>

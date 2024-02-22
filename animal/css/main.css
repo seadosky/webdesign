@@ -3,13 +3,25 @@
 /* 한글 웹폰트 */
 @font-face { 
     font-family:'S-CoreDream'; 
-    src:url('../fonts/S-CoreDream-4Regular.woff') format('woff'); 
+    src:url('../fonts/SCoreDreamRegular.woff') format('woff'); 
     font-weight:400; 
     font-style:normal; 
 }
 @font-face { 
     font-family:'S-CoreDream'; 
-    src:url('../fonts/S-CoreDream-7ExtraBold.woff') format('woff'); 
+    src:url('../fonts/SCoreDreamRegular.woff2') format('woff2'); 
+    font-weight:400; 
+    font-style:normal; 
+}
+@font-face { 
+    font-family:'S-CoreDream'; 
+    src:url('../fonts/SCoreDreamExtraBold.woff') format('woff'); 
+    font-weight:700; 
+    font-style:normal; 
+}
+@font-face { 
+    font-family:'S-CoreDream'; 
+    src:url('../fonts/SCoreDreamExtraBold.woff2') format('woff2'); 
     font-weight:700; 
     font-style:normal; 
 }
@@ -44,11 +56,6 @@ html, body {
 .wrapper { /* 홈페이지 넓이를 제한하고 가운데 정렬 */
     width: 1280px;
     margin: 0 auto; /* 가운데 정렬 */
-}
-#wrap { /* id="wrap"에 적용되는 스타일 */
-    width: 1280px;  
-    overflow: hidden;
-    /* 콘텐츠 영역 밖에 나간 요소를 숨김 */
 }
 
 /* wrapper의 사이즈 1280 + 40px (좌우여백) = 1320 */
@@ -105,3 +112,162 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
     top: 100px;
 }
 
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* 왼쪽에 로고, 오른쪽에 검색/바로가기, 가운데 메뉴 배치
+        왼쪽과 오른쪽의 사이즈가 비슷해야 메뉴가 가운데로 감 */
+}
+.header .logo {
+    margin: 30px 0 0 40px;
+    font-size: 0;
+    line-height: 0;
+}
+.header .logo a {
+    width: 181px;
+    height: 41px;
+    display: block;
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+}
+.header .gnb .gnb_open,
+.header .gnb .gnb_close {
+    display: none;
+}
+.header .gnb ul.depth1 {
+    display: flex;
+}
+.header .gnb ul.depth1 > li {
+    position: relative; /* .depth2 정렬의 기준 */
+}
+.header .gnb ul.depth1 > li > a {
+    padding: 0 43.5px;
+    line-height: 100px;
+    display: block;
+    font-size: 22px;
+    position: relative; /* after 정렬의 기준 */
+}
+/* has 선택자
+    1차 메뉴중에서 2차 메뉴를 가지고 있는 li가 있고
+    2차 메뉴가 없는 li가 있음
+    이 때, 2차 메뉴를 가지고 있는 li만 선택해서 a태그에 스타일을 줄 예정
+    -> li:has(.depth2) 라고 선언하면 li의 하위 요소중에서 depth2라는 클래스명을 갖은
+        li에만 스타일이 적용됨 
+        ---단, 주의사항> 2023년에 새로 생김(브라우저 업데이트 안된 곳에서는 적용 안됨) */
+.header .gnb ul.depth1 > li:has(.depth2) > a::after {
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 2px);
+    width: 23px;
+    height: 8px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7.169' viewBox='0 0 12 7.169'%3E%3Cpath id='expand_more_FILL0_wght500_GRAD0_opsz24' d='M257.5-622.57a1.262,1.262,0,0,1-.45-.081,1.1,1.1,0,0,1-.392-.258l-4.825-4.825a1.133,1.133,0,0,1-.333-.836,1.133,1.133,0,0,1,.333-.836,1.133,1.133,0,0,1,.836-.333,1.133,1.133,0,0,1,.836.333l4,4,4-4a1.133,1.133,0,0,1,.836-.333,1.133,1.133,0,0,1,.836.333,1.133,1.133,0,0,1,.333.836,1.133,1.133,0,0,1-.333.836l-4.825,4.825a1.1,1.1,0,0,1-.392.258A1.262,1.262,0,0,1,257.5-622.57Z' transform='translate(-251.5 629.739)' fill='rgba(255,255,255,0.8)'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    content: "";
+}  
+.header .gnb ul.depth2 {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 100px; /* a태그의 높이와 동일 */
+    transform: translate(-50%, 0); /* 나의 넓이의 절반을 왼쪽으로 이동 */
+    padding: 22px 24px 14px 24px;
+    /* 2차메뉴가 absolute라면 하위메뉴로 이동할때 메뉴가 아웃되는 경우가 있음
+        이 문제를 해결하려면 반드시 2차메뉴가 1차메뉴 a와 딱 붙어있어야함. (그 사이에 틈이 있으면 안됨)
+        필요한 여백 padding으로 처리 (margin 절대 안됨) 
+        만약 background가 필요하면 before로 처리 */
+}
+.header .gnb ul.depth2::before {
+    position: absolute;
+    left: 0;
+    top: 8px; /* a와의 여백 */
+    z-index: -1;
+    width: 100%;
+    height: calc(100% - 8px);
+    content: "";
+    border-radius: 10px;
+    backdrop-filter: blur(20px) brightness(90%); /* brightness 100% 기본, 밝게 100% 이상/ 어둡게 100% 이하 */
+}
+.header .gnb ul.depth2 > li > a {
+    display: block;
+    white-space: nowrap;
+    font-size: 17px;
+    line-height: 40px;
+}
+.header .gnb ul.depth2 > li > a:hover {
+    font-weight: 700;
+    color: #4CAA49;
+}
+/* li에 마우스를 올리면 jquery에서 해당 li에 sub_over 클래스 추가 예정 */
+.header.menu_over::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: "";
+    backdrop-filter: blur(20px) brightness(90%); 
+    /* brightness 100% 기본, 밝게 100% 이상/ 어둡게 100% 이하 */
+}
+.header .gnb ul.depth1 > li.sub_over > a {
+    color: #4CAA49;
+    font-weight: 700;
+}
+.header .gnb ul.depth1 > li.sub_over > a::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7.169' viewBox='0 0 12 7.169'%3E%3Cpath id='expand_more_FILL0_wght500_GRAD0_opsz24' d='M257.5-622.57a1.262,1.262,0,0,1-.45-.081,1.1,1.1,0,0,1-.392-.258l-4.825-4.825a1.133,1.133,0,0,1-.333-.836,1.133,1.133,0,0,1,.333-.836,1.133,1.133,0,0,1,.836-.333,1.133,1.133,0,0,1,.836.333l4,4,4-4a1.133,1.133,0,0,1,.836-.333,1.133,1.133,0,0,1,.836.333,1.133,1.133,0,0,1,.333.836,1.133,1.133,0,0,1-.333.836l-4.825,4.825a1.1,1.1,0,0,1-.392.258A1.262,1.262,0,0,1,257.5-622.57Z' transform='translate(263.5 -622.57) rotate(180)' fill='%234caa49'/%3E%3C/svg%3E%0A");
+}
+.header .gnb ul.depth1 > li.sub_over > .depth2 {
+    display: block;
+}
+.header .tnb {
+    display: flex;
+    margin: 40px 40px ;
+    font-size: 17px;
+}
+.header .tnb .search {
+    position: relative; /* before정렬의 기준 */
+    padding-left: 21px;
+} 
+.header .tnb .search::before {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15.911' height='15.905' viewBox='0 0 15.911 15.905'%3E%3Cpath id='search_FILL0_wght500_GRAD0_opsz24' d='M118.49-833.7a5.7,5.7,0,0,1-4.187-1.715,5.7,5.7,0,0,1-1.716-4.187,5.7,5.7,0,0,1,1.716-4.187,5.7,5.7,0,0,1,4.187-1.715,5.7,5.7,0,0,1,4.187,1.715,5.7,5.7,0,0,1,1.716,4.187,5.562,5.562,0,0,1-.3,1.848,5.279,5.279,0,0,1-.813,1.515l4.937,4.942a.974.974,0,0,1,.282.71.948.948,0,0,1-.287.706.959.959,0,0,1-.708.282.959.959,0,0,1-.708-.282l-4.932-4.931a5.335,5.335,0,0,1-1.526.811A5.566,5.566,0,0,1,118.49-833.7Zm0-2.022a3.746,3.746,0,0,0,2.749-1.129,3.745,3.745,0,0,0,1.13-2.75,3.745,3.745,0,0,0-1.13-2.75,3.746,3.746,0,0,0-2.749-1.129,3.745,3.745,0,0,0-2.75,1.129,3.745,3.745,0,0,0-1.13,2.75,3.745,3.745,0,0,0,1.13,2.75A3.745,3.745,0,0,0,118.49-835.717Z' transform='translate(-112.587 845.499)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.header .tnb .paper {
+    position: relative;
+    padding-right: 16px;
+    margin-left: 10px;
+}
+.header .tnb .paper::after {
+    position: absolute;
+    right: 0;
+    top: 3px;
+    width: 13px;
+    height: 13px;
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12.859' height='12.859' viewBox='0 0 12.859 12.859'%3E%3Cpath id='open_in_new_FILL0_wght500_GRAD0_opsz24' d='M113.458-835.272a1.531,1.531,0,0,1-1.125-.465,1.531,1.531,0,0,1-.465-1.125v-9.68a1.531,1.531,0,0,1,.465-1.125,1.534,1.534,0,0,1,1.125-.465H117.5a.768.768,0,0,1,.565.23.767.767,0,0,1,.23.564.77.77,0,0,1-.23.565.765.765,0,0,1-.565.23h-4.046v9.68h9.68v-4.046a.767.767,0,0,1,.23-.564.768.768,0,0,1,.565-.23.768.768,0,0,1,.565.23.767.767,0,0,1,.23.564v4.046a1.531,1.531,0,0,1-.465,1.125,1.531,1.531,0,0,1-1.125.465Zm9.68-10.162-5.766,5.767a.742.742,0,0,1-.552.219.756.756,0,0,1-.552-.223.753.753,0,0,1-.221-.555.753.753,0,0,1,.221-.554l5.762-5.761H120.49a.765.765,0,0,1-.565-.23.77.77,0,0,1-.23-.565.767.767,0,0,1,.23-.564.768.768,0,0,1,.565-.23h4.237v4.238a.767.767,0,0,1-.23.564.768.768,0,0,1-.565.23.768.768,0,0,1-.565-.23.767.767,0,0,1-.23-.564Z' transform='translate(-111.869 848.131)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.visual {
+    background: url(../images/visual_bg1.png) no-repeat center center / cover;
+    height: 700px;
+}
