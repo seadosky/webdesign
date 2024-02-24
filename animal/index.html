@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <title>동물보호센터</title>
 </head>
 <body>
@@ -49,7 +51,37 @@
             </div>
         </header>
         <div class="container">
-            <section class="visual"></section>
+            <section class="visual">
+                <h2>비쥬얼 팝업</h2>
+                <div class="swiper"><!-- section태그 안에는 반드시 heading태그가 있어야함 -->
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <image src="images/visual_bg1.png" alt="">
+                            <div class="visual_txt txt01">
+                                <p>반려동물,<br>사랑으로 지켜주세요</p>
+                            </div>
+                        </li> 
+                        <li class="swiper-slide">
+                            <image src="images/visual_bg2.png" alt="">
+                            <div class="visual_txt txt02">
+                                <p>도움이 필요한 동물에게<br>보금자리를 내어주세요</p>
+                            </div>
+                        </li> 
+                        <li class="swiper-slide">
+                            <image src="images/visual_bg3.png" alt="">
+                            <div class="visual_txt txt03">
+                                <p>반려동물,<br>사랑으로 지켜주세요</p>
+                            </div>
+                        </li> 
+                    </ul>
+                    <div class="ctrl_btn">
+                        <button class="prev">이전팝업보기</button>
+                        <button class="next">다음팝업보기</button>
+                        <button class="play">재생</button>
+                        <button class="stop">일시정지</button>
+                    </div>
+                </div>    
+            </section>
             <section class="lost"></section>
             <section class="msg"></section>
             <section class="adopt"></section>
