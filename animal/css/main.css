@@ -886,6 +886,9 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
 .footer .footer_nav ul li:last-child::after {
     display: none;
 }
+.footer .footer_nav ul li.privacy {
+    font-weight: 700;
+}
 .footer .family_site {
     position: absolute;
     right: 0;

@@ -37,10 +37,24 @@ $(document).ready(function(){
         },
 
     });
+
     // swiper.autoplay.stop();  /* 일시정지 기능 */
     // swiper.autoplay.start();  /* 재생 기능 */
+    $('.visual .swiper .stop').on('click', function(){
+        swiper.autoplay.stop();  /* 일시정지 기능 */
+        $(".visual .swiper .play").show();
+        $(".visual .swiper .stop").hide();	
+    })
+    $('.visual .swiper .play').on('click', function(){
+        swiper.autoplay.start();  /* 재생 기능 */
+        $(".visual .swiper .play").hide();
+        $(".visual .swiper .stop").show();	
+    })
 
 
+
+
+    
     /* 관련사이트
     site_open을 클릭하면 목록이 나타남
         site_list 목록이 나타남
