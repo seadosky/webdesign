@@ -339,7 +339,7 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
     .header .gnb ul.depth1 > li:has(.depth2) > a span::after {
         position: absolute;
         right: -14px;
-        top: 12px;
+        top: 10px;
         width: 10px;
         height: 10px;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='5.874' viewBox='0 0 10 5.874'%3E%3Cpath id='expand_more_FILL0_wght400_GRAD0_opsz24' d='M262-618.126a.992.992,0,0,1-.336-.056.787.787,0,0,1-.291-.191l-4.126-4.126a.85.85,0,0,1-.247-.628.85.85,0,0,1,.247-.628.85.85,0,0,1,.628-.247.85.85,0,0,1,.628.247l3.5,3.5,3.5-3.5a.85.85,0,0,1,.628-.247.85.85,0,0,1,.628.247.85.85,0,0,1,.247.628.85.85,0,0,1-.247.628l-4.126,4.126a.787.787,0,0,1-.291.191A.992.992,0,0,1,262-618.126Z' transform='translate(-257 624)' fill='rgba(0,16,0,0.8)'/%3E%3C/svg%3E%0A");
@@ -357,9 +357,6 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
         font-size: 22px;
         line-height: 50px;
         padding: 20px 20px;
-    }
-    .header .gnb ul.depth1 > li.sub_open > a {
-        font-weight: 700;
     }
     .header .gnb ul.depth2 {
         display: none;
