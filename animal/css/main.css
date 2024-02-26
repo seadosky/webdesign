@@ -1024,6 +1024,11 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
         display: none;
     }
     .footer .copyright {
+        margin-top: 40px;
+    }
+}/*m*/
+@media screen and (max-width:500px){
+    .footer .copyright {
         margin-top: 30px;
     }
 }/*m*/
