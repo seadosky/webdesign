@@ -358,6 +358,7 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
         padding: 20px 20px;
     }
     .header .gnb ul.depth1 > li.sub_open > a {
+        color: #4CAA49;
         font-weight: 700;
     }
     .header .gnb ul.depth2 {
