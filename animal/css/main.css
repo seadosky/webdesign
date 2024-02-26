@@ -351,12 +351,14 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
     } 
     .header .gnb ul.depth1 > li.sub_open:has(.depth2) > a span::after {   
         transform: rotate(180deg);
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='5.874' viewBox='0 0 10 5.874'%3E%3Cpath id='expand_less_FILL0_wght400_GRAD0_opsz24' d='M262-621.87l-3.5,3.5a.85.85,0,0,1-.628.247.85.85,0,0,1-.628-.247A.85.85,0,0,1,257-619a.85.85,0,0,1,.247-.628l4.126-4.126a.787.787,0,0,1,.291-.191A.993.993,0,0,1,262-624a.993.993,0,0,1,.336.056.787.787,0,0,1,.291.191l4.126,4.126A.85.85,0,0,1,267-619a.85.85,0,0,1-.247.628.85.85,0,0,1-.628.247.85.85,0,0,1-.628-.247Z' transform='translate(267 -618.126) rotate(180)' fill='%234caa49'/%3E%3C/svg%3E%0A");
     }
     .header .gnb ul.depth1 > li > a {
         font-size: 22px;
         line-height: 50px;
         padding: 20px 20px;
+    }
+    .header .gnb ul.depth1 > li.sub_open > a {
+        font-weight: 700;
     }
     .header .gnb ul.depth2 {
         display: none;
