@@ -552,8 +552,23 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
         display: none;
     }
 }/*m*/
-
+.lost .slogan {
+    position: absolute;
+    left: 10%;
+    top: -50px;
+    z-index: 10;
+    mix-blend-mode: difference; /* 흰색에서는 검은색 */
+    animation:slogan_rotate; 
+    animation-duration:10s; 
+    animation-timing-function:linear; 
+    animation-iteration-count:infinite; 
+}
+@keyframes slogan_rotate {
+    0% { transform:rotate(0) }
+    100% { transform:rotate(360deg) } /* 글자가 움직여서 처음과 동일한 위치가 되는 값 (동일한 문장을 여러번 쓰기 때문에 3-4번째 문장이 다시 시작하는 위치로 하면 됨) */
+    }
 .lost {
+    position: relative; /* slogan 정렬의 기준 */
     background-color: #001000;
     color: #fff;
     padding-bottom: 65px;
@@ -757,6 +772,9 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
     }
 }/*m*/
 @media screen and (max-width:500px){
+    .lost .slogan {
+        display: none;
+    }
     .lost h2 {
         font-size: 22px;
         padding: 60px 0 15px 0;
