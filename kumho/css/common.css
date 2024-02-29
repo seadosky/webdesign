@@ -8,7 +8,7 @@
 }
 @font-face { 
     font-family:'Pretendard'; 
-    src:url('../fonts/Pretendard-Bold.woff2') format('woff2'); 
+    src:url('../fonts/Pretendard-Regular.woff2') format('woff2'); 
     font-weight:400; 
     font-style:normal; 
 }
@@ -16,7 +16,7 @@
     font-family:'Pretendard'; 
     src:url('../fonts/Pretendard-Bold.woff') format('woff'); 
     font-weight:700; 
-    font-style:normal; 
+    font-style:normal;
 }
 @font-face { 
     font-family:'Pretendard'; 
@@ -101,10 +101,10 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
     top: 100px;
 }
 
-/*
+/*****
     파일명 : common.css
     작성자 : 이유경
     작성일 : 2024.02.28
     속  성 : 홈페이지 전체에 공통으로 적용되는 스타일을 저장
-            (header와 foooter 스타일을 저장)
-*/
+             문자스타일 등의 기본스타일만 저장
+*****/
