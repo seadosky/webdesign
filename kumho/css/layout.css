@@ -2,7 +2,7 @@
     파일명 : layout.css
     작성자 : 이유경
     작성일 : 2024.02.28
-    설  명 : 모든 페이지의 레이아웃 요소 (header/footer/서브레이아웃)
+    설  명 : 모든 페이지의 레이아웃 요소 (header/.footer/서브레이아웃)
              메뉴명, sub_visual 이미지스타일, 탭메뉴
 *****/
 .header {
@@ -376,13 +376,13 @@
         background-color: #fff;
         color: #1d1d1d;
         line-height: 22px;
-        padding: 0 24px 0 10px;
+        padding: 2px 24px 2px 10px;
         margin: 0;
     }
     .header .tnb .link::after {
         position: absolute;
-        right: 12px;
-        top: 5px;
+        right: 11px;
+        top: 4px;
         width: 11px;
         height: 11px;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 11 11'%3E%3Cpath id='open_in_new_FILL0_wght400_GRAD0_opsz24' d='M121.222-829a1.177,1.177,0,0,1-.863-.359,1.177,1.177,0,0,1-.359-.863v-8.556a1.177,1.177,0,0,1,.359-.863,1.177,1.177,0,0,1,.863-.359h3.667a.591.591,0,0,1,.435.176.591.591,0,0,1,.176.435.591.591,0,0,1-.176.435.591.591,0,0,1-.435.176h-3.667v8.556h8.556v-3.667a.591.591,0,0,1,.176-.435.591.591,0,0,1,.435-.176.591.591,0,0,1,.435.176.591.591,0,0,1,.176.435v3.667a1.177,1.177,0,0,1-.359.863,1.177,1.177,0,0,1-.863.359Zm8.556-8.922-5.256,5.256a.579.579,0,0,1-.428.168.579.579,0,0,1-.428-.168.579.579,0,0,1-.168-.428.579.579,0,0,1,.168-.428l5.256-5.256h-1.589a.591.591,0,0,1-.435-.176.591.591,0,0,1-.176-.435.591.591,0,0,1,.176-.435.591.591,0,0,1,.435-.176H131v3.667a.591.591,0,0,1-.176.435.592.592,0,0,1-.435.176.592.592,0,0,1-.435-.176.591.591,0,0,1-.176-.435Z' transform='translate(-120 840)' fill='%232d2d2d'/%3E%3C/svg%3E%0A");
@@ -424,21 +424,153 @@
     }
     .header.menu_open .tnb .lang::before {
         left: 0;
-        top: 2px;
+        top: 0;
         background-size: 11px auto;
     }
     .header.menu_open .tnb .link {
         line-height: 22px;
-        padding: 0 24px 0 10px;
         margin: 0;
     }
     .header .tnb .link::after {
         position: absolute;
-        right: 12px;
-        top: 5px;
+        right: 11px;
+        top: 4px;
         background-size: 11px auto;
     }
 }/*m*/
 @media screen and (max-width:500px){
 
+}/*m*/
+
+.footer {
+    background-color: #030708;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 80px 0 80px 0;
+}
+.footer .wrapper {
+    position: relative;
+}
+.footer .family_site {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.footer .family_site ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 34px;
+    z-index: 100;
+    width: 100%;
+    background-color: #3d3d3d;
+    border-radius: 15px;
+    padding: 15px 20px;
+}
+.footer .family_site ul a {
+    display: block;
+    line-height: 25px;
+}
+.footer .family_site ul a:hover {
+    font-weight: 700;
+    text-decoration: underline;
+}
+.footer .family_site .open,
+.footer .family_site .close {
+    padding: 7px 68px 6px 15px;
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    position: relative;
+}
+.footer .family_site .close {
+    display: none;
+}
+.footer .family_site .open::after,
+.footer .family_site .close::after {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.footer .family_site .open::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath id='add_FILL0_wght400_GRAD0_opsz24' d='M204.286-754.286h-3.571a.692.692,0,0,1-.509-.205A.691.691,0,0,1,200-755a.691.691,0,0,1,.205-.509.692.692,0,0,1,.509-.205h3.571v-3.573a.692.692,0,0,1,.205-.509A.692.692,0,0,1,205-760a.693.693,0,0,1,.509.205.693.693,0,0,1,.205.509v3.573h3.571a.692.692,0,0,1,.509.205A.69.69,0,0,1,210-755a.69.69,0,0,1-.205.509.692.692,0,0,1-.509.205h-3.571v3.573a.692.692,0,0,1-.205.509A.693.693,0,0,1,205-750a.692.692,0,0,1-.509-.205.69.69,0,0,1-.205-.509Z' transform='translate(-200 760)' fill='rgba(255,255,255,0.7)'/%3E%3C/svg%3E%0A");
+}
+.footer .family_site .close::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='1.429' viewBox='0 0 10 1.429'%3E%3Cpath id='remove_FILL0_wght400_GRAD0_opsz24' d='M200.714-518.571a.691.691,0,0,1-.509-.205.691.691,0,0,1-.205-.509.691.691,0,0,1,.205-.509.691.691,0,0,1,.509-.205h8.571a.691.691,0,0,1,.509.205.691.691,0,0,1,.205.509.691.691,0,0,1-.205.509.691.691,0,0,1-.509.205Z' transform='translate(-200 520)' fill='rgba(255,255,255,0.7)'/%3E%3C/svg%3E%0A");
+}
+.footer .family_site.on .open {
+    display: none;
+}
+.footer .family_site.on .close {
+    display: block;
+}
+.footer .family_site.on ul {
+    display: block;
+}
+.footer .footer_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer .footer_nav ul li {
+    margin-right: 50px;
+    position: relative;
+}
+.footer .footer_nav ul li::after {
+    position: absolute;
+    right: -25px;
+    top: 2px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    content: "";
+}
+.footer .footer_nav ul li:last-child:after {
+    display: none;
+}
+.footer .copyright {
+    margin-top: 50px;
+    color: rgba(255, 255, 255, 0.6);
+}
+@media screen and (max-width:1024px){
+    .footer {
+        padding: 50px 0 55px 0;
+    }
+    .footer .family_site {
+        position: relative;
+        right: 0;
+        top: 0;
+        /* display: flex;
+        justify-content: center; */
+        margin-bottom: 30px;
+    }
+    .footer .family_site ul {
+        bottom: 33px;
+    }
+    .footer .family_site .open,
+    .footer .family_site .close {
+        width: 100%;
+        position: relative;
+        text-align: left;
+    }
+    .footer .footer_nav {
+        line-height: 30px;
+    }
+    .footer .footer_nav ul li {
+        margin-right: 32px;
+    }
+    .footer .footer_nav ul li::after {
+        right: -17px;
+        top: 13px;
+        width: 3px;
+        height: 3px;
+        border-radius: 100%;
+    }
+    .footer .copyright {
+        margin-top: 30px;
+    }
 }/*m*/
