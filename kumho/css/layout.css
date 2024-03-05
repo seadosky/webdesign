@@ -319,24 +319,17 @@
         border-bottom: 1px solid #ededed;
         padding-left: 20px;
     }
-    .header .gnb ul.depth1 > li.on > a {
+    .header .gnb ul.depth1 > li.on > a,
+    .header .gnb ul.depth1 > li[data-menu="on"] > a {
         color: #BF0D0D;
         font-weight: 700;
     }
-    .header .gnb ul.depth1 > li.on > a span {
+    .header .gnb ul.depth1 > li.on > a span,
+    .header .gnb ul.depth1 > li[data-menu="on"] > a span {
         position: relative;
     }
-    .header .gnb ul.depth1 > li.on > a span::after {
-        position: absolute;
-        right: -9px;
-        top: 0;
-        width: 7px;
-        height: 7px;
-        border-radius: 100%;
-        background-color: #BF0D0D;
-        content: "";
-    }
-    .header .gnb ul.depth1 > li.on > ul.depth2 {
+    .header .gnb ul.depth1 > li.on > ul.depth2,
+    .header .gnb ul.depth1 > li[data-menu="on"] > ul.depth2 {
         display: block;
         background-color: #f4f4f4;
     }
@@ -344,7 +337,8 @@
         padding-left: 20px;
     }
     .header .gnb ul.depth2 > li.on > a,
-    .header .gnb ul.depth2 > li.on > a:hover {
+    .header .gnb ul.depth2 > li.on > a:hover,
+    .header .gnb ul.depth2 > li[data-menu="on"] > a {
         font-weight: 700;
         color: #BF0D0D;
     }
@@ -575,3 +569,156 @@
         margin-top: 30px;
     }
 }/*m*/
+
+.sub_visual {
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(../images/common/sub_visual01.png);
+    color: #fff;
+}
+.sub_visual.sub1 {
+    background-image: url(../images/common/sub_visual01.png);
+}
+.sub_visual.sub2 {
+    background-image: url(../images/common/sub_visual02.png);
+}
+.sub_visual.sub3 {
+    background-image: url(../images/common/sub_visual03.png);
+}
+.sub_visual.sub4 {
+    background-image: url(../images/common/sub_visual04.png);
+}
+.sub_visual.sub5 {
+    background-image: url(../images/common/sub_visual05.png);
+}
+.sub_visual .sub_tit {
+    padding: 258px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sub_visual .sub_tit h1 {
+    font-size: 60px;
+}
+.sub_visual .sub_tit strong {
+    font-size: 21px;
+    margin-top: 5px;
+}
+.lnb {
+    background-color: #030708;
+    color: #fff;
+    height: 80px;
+}
+.lnb ul {
+    display: flex;
+    width: 1280px;
+    margin: 0 auto;
+}
+.lnb ul li a {
+    display: block;
+    line-height: 80px;
+    text-align: center;
+    padding: 0 5px;
+    font-size: 20px;
+    width: 140px;
+}
+.lnb ul li.on a,
+.lnb ul li a:hover {
+    background-color: #fff;
+    font-weight: 700;
+    color: #BF0D0D;
+    height: 78px;
+    margin-top: 1px;
+}
+@media screen and (max-width:1320px){
+    .lnb ul {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .lnb ul li a {
+        font-size: 18px;
+        width: 125px;
+    }
+    
+}/*m*/
+@media screen and (max-width:1024px){
+    .sub_visual {
+        height: 500px;
+    }
+    .sub_visual .sub_tit {
+        padding: 210px 0 0 0;
+    }
+    .sub_visual .sub_tit h1 {
+        font-size: 52px;
+    }
+    .sub_visual .sub_tit strong {
+        font-size: 18px;
+        margin-top: 5px;
+    }
+}/*m*/
+@media screen and (max-width:768px){
+    .sub_visual {
+        height: 400px;
+    }
+    .sub_visual .sub_tit {
+        padding: 163px 0 0 0;
+    }
+    .sub_visual .sub_tit h1 {
+        font-size: 43px;
+    }
+    .sub_visual .sub_tit strong {
+        font-size: 15px;
+        margin-top: 3px;
+    }
+    .lnb {
+        padding: 0;
+        overflow-x: auto;
+        height: 60px;
+    }
+    .lnb ul li a {
+        line-height: 60px;
+        font-size: 15px;
+        width: 106px;
+    }
+    .lnb ul li.on a,
+    .lnb ul li a:hover {
+    height: 58px;
+    margin-top: 1px;
+}
+}/*m*/
+@media screen and (max-width:500px){
+    .sub_visual {
+        height: 280px;
+    }
+    .sub_visual .sub_tit {
+        padding: 116px 0 0 0;
+    }
+    .sub_visual .sub_tit h1 {
+        font-size: 38px;
+    }
+    .sub_visual .sub_tit strong {
+        font-size: 13px;
+        margin-top: 2px;
+    }
+    .lnb {
+        padding: 0;
+        overflow-x: auto;
+        height: 48px;
+    }
+    .lnb ul li a {
+        line-height: 48px;
+        font-size: 13px;
+        width: 95px;
+    }
+    .lnb ul li.on a,
+    .lnb ul li a:hover {
+    height: 46px;
+    margin-top: 1px;
+}
+}/*m*/
+
+.contents {
+    min-height: 200px;
+}

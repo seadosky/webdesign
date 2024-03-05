@@ -1,6 +1,86 @@
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+
 /*
     파일명 : contents.css
     작성자 : 이유경
     작성일 : 2024.02.28
     설  명 : 모든 콘텐츠 페이지별 디자인 스타일 저장
 */
+
+/* ceo 인사말 - 회사소개 */
+.cts_greeting {
+    margin: 120px 0 236px 0;
+    position: relative;
+}
+.cts_greeting .tit {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 50px 0;
+    background: none;
+}
+.cts_greeting p {
+    margin-right: 640px;
+    color: #2d2d2d;
+}
+.cts_greeting p strong {
+    font-size: 20px;
+    font-weight: 700;
+}
+.cts_greeting p strong span {
+    color: #BF0D0D;
+}
+.cts_greeting .ceo {
+    position: absolute;
+    left: calc(50% + 230px);
+    top: 20px;
+}
+.cts_greeting .ceo .sign {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+.cts_greeting .ceo .sign strong {
+    display: block;
+    margin: 0 5px 0 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+@media screen and (max-width:1320px){
+    .cts_greeting .tit {
+        font-size: 36px;
+        margin: 0 0 40px 0;
+    }
+    .cts_greeting p {
+        margin-right: 550px;
+    }
+    .cts_greeting .ceo {
+        left: calc(50% + 150px);
+    }
+}
+@media screen and (max-width:1024px){
+    .cts_greeting {
+        margin: 100px 0 210px 0;
+    }
+    .cts_greeting .tit {
+        font-size: 36px;
+        margin: 0 0 30px 0;
+    }
+    .cts_greeting p {
+        margin-right: 640px;
+    }
+    .cts_greeting .ceo {
+        left: auto;
+        right: 20px;
+    }
+}
+@media screen and (max-width:768px){
+    .cts_greeting .tit br.mon {
+        display: none;
+    }
+    .cts_greeting p {
+        margin: 0;
+    }
+}/*m*/
