@@ -372,7 +372,14 @@
     .biz .list ul li a span {
         font-size: 25px;
     }
+
 }/*m*/
+@media screen and (max-width:500px){
+    .biz .tit p {
+        font-size: 23px;
+    }
+}
+
 .news .tit {
     margin: 135px 0 55px 0;
 }
@@ -508,6 +515,9 @@
     }
 }
 @media screen and (max-width:500px){
+    .news .tit p {
+        font-size: 23px;
+    }
     .news .list ul li {
         border: 1px solid #8d8d8d;
         padding: 10px 12px 18px 12px;
@@ -549,10 +559,12 @@
     color: #030708;
     transition: 0.3s;
 }
-.service .list ul li:hover {
-    transform: translate(-5px, -5px); /* 왼쪽상단으로 이동 */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    background-color: #cccccc;
+@media screen and (min-width:1025px){
+    .service .list ul li:hover {
+        transform: translate(-5px, -5px); /* 왼쪽상단으로 이동 */
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        background-color: #cccccc;
+}
 }
 .service .list ul li a {
     display: block;
@@ -602,9 +614,10 @@
     .service .list ul li a::before {
         left: 20px;
         top: 35px;
-        width: 46px;
-        height: 48px;
+        width: 40px;
+        height: 43px;
     }
+
     .service .list ul li a strong {
         font-size: 22px;
     }
@@ -625,7 +638,7 @@
         width: calc(33.33% - 10.66px);
     }
     .service .list ul li a {
-        padding: 75px 0 20px 0;
+        padding: 70px 0 20px 0;
         text-align: center;
         height: auto;
     }
