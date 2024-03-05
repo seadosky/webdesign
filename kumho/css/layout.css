@@ -454,6 +454,7 @@
     position: absolute;
     right: 0;
     top: 0;
+    color: rgba(255, 255, 255, 0.8);
 }
 .footer .family_site ul {
     display: none;
