@@ -533,3 +533,20 @@
     }
 }/*m*/
 @media screen and (max-width:768px){}/*m*/
+
+.cts_biz05 .login_group {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.cts_biz05 .login_group input[type="submit"] {
+    width: 100%;
+    background-color: #BF0D0D;
+    color: #fff;
+    border-radius: 10px;
+    border: 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 50px;
+    cursor: pointer; /* 오버시 마우스 포인터 손가락모양 */
+}
