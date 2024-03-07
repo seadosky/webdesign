@@ -623,6 +623,7 @@
     padding: 0 5px;
     font-size: 20px;
     width: 140px;
+    white-space: nowrap;
 }
 .lnb ul li.on a,
 .lnb ul li a:hover {

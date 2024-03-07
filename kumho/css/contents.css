@@ -451,3 +451,85 @@
         font-size: 18px;
     }
 }
+
+/* 사업실적검색 - 사업분야 */
+.cts_biz05 {
+    margin: 100px 0;
+}
+.cts_biz05 .search_group .search {
+    max-width: 626px; /* 최대넓이 */
+    width: 100%; /* 최대넓이 이상으로 늘어나지 않게 함 */
+    height: 64px;
+    border: 2px solid #030708;
+    border-radius: 45px;
+    margin: 0 auto;
+    position: relative; /* before 정렬의 기준 */
+    padding: 0 0 0 81px;
+    display: flex;
+    align-items: center;
+}
+.cts_biz05 .search_group .search:hover {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+.cts_biz05 .search_group .search::before {
+    position: absolute;
+    left: 30px;
+    top: 6px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #BF0D0D;
+    content: "K";
+}
+.cts_biz05 .search_group .search label {
+    display: none;
+}
+.cts_biz05 .search_group .search input[type="text"] {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d2d2d;
+    width: calc(100% - 81px);
+    border: 0;
+    outline: 0; /* 입력할때 생기는 테두리 */
+}
+.cts_biz05 .search_group .search input[type="text"]::placeholder {
+    font-weight: 400;
+    color: #A1A1A1;
+}
+.cts_biz05 .search_group .search input[type="submit"] {
+    border: 0;
+    background-color: transparent;
+    font-size: 0;
+    line-height: 0;
+    width: 30px;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath id='search-line' d='M25.675,23.587,32,29.911,29.911,32l-6.325-6.325a13.295,13.295,0,1,1,2.089-2.089Zm-2.963-1.1a10.335,10.335,0,1,0-.221.221Z' transform='translate(-2 -2)' fill='%23bf0d0d'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 23px;
+}
+@media screen and (max-width:1024px){
+    .cts_biz05 {
+        margin: 80px 0;
+    }
+    .cts_biz05 .search_group .search {
+        height: 57px;
+        border-radius: 40px;
+        padding: 0 0 0 51px;
+    }
+    .cts_biz05 .search_group .search::before {
+        left: 20px;
+        top: 6px;
+        font-size: 30px;
+    }
+    .cts_biz05 .search_group .search input[type="text"] {
+        font-size: 18px;
+        width: calc(100% - 51px);
+    }
+    .cts_biz05 .search_group .search input[type="submit"] {
+        width: 25px;
+        height: 25px;
+        margin-left: 3px;
+    }
+}/*m*/
+@media screen and (max-width:768px){}/*m*/

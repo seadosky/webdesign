@@ -8,7 +8,7 @@
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/contents.js"></script>
-    <title>금호뉴스 > 홍보센터 > 금호건설</title>
+    <title>사업실적검색 > 사업분야 > 금호건설</title>
 </head>
 <body>
     <!--
@@ -67,14 +67,14 @@
                                 <li><a href="esg05.html">상생경영</a></li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="on" data-menu="on">
                             <a href="biz01.html"><span>사업분야</span></a>
                             <ul class="depth2">
                                 <li><a href="biz01.html">건축사업</a></li>
                                 <li><a href="biz02.html">토목사업</a></li>
                                 <li><a href="biz03.html">주택사업</a></li>
                                 <li><a href="biz04.html">플랜트/환경사업</a></li>
-                                <li><a href="biz05.html">사업실적검색</a></li>
+                                <li class="on" data-menu="on"><a href="biz05.html">사업실적검색</a></li>
                             </ul>
                         </li>
                         <li>
@@ -87,10 +87,10 @@
                                 <li><a href="ir05.html">IR Contact</a></li>
                             </ul>
                         </li>
-                        <li class="on" data-menu="on">
+                        <li>
                             <a href="news.html"><span>홍보센터</span></a>
                             <ul class="depth2">
-                                <li class="on" data-menu="on"><a href="news.html">금호뉴스</a></li>
+                                <li><a href="news.html">금호뉴스</a></li>
                                 <li><a href="sellList.html">분양뉴스</a></li>
                                 <li><a href="ci.html">CI/BI</a></li>
                                 <li><a href="brochure.html">PR갤러리</a></li>
@@ -111,29 +111,47 @@
         </header>
         <div class="container" id="container">
             <!-- 1차메뉴별로 회사소개 sub1, esg sub2 클래스를 추가해서 배경이미지 교체 -->
-           <div class="sub_visual sub5">
+           <div class="sub_visual sub3">
                 <div class="wrapper">
                     <div class="sub_tit">
-                        <h1>금호뉴스</h1> <!-- 현재메뉴명 -->
-                        <strong>고객의 곁에서 함께하는 금호건설</strong>
+                        <h1>사업실적검색</h1> <!-- 현재메뉴명 -->
+                        <strong>세계로 뻗어가는 건설 한류의 중심</strong>
                     </div>
                 </div>
            </div>
            <nav class="lnb"> <!-- local navigation bar -->
                 <ul>
                     <!-- 현재 선택된 메뉴에 on클래스 추가 -->
-                    <li class="on" data-menu="on"><a href="news.html">금호뉴스</a></li>
-                                <li><a href="sellList.html">분양뉴스</a></li>
-                                <li><a href="ci.html">CI/BI</a></li>
-                                <li><a href="brochure.html">PR갤러리</a></li>
-                                <li><a href="kumho.html">금호역사관</a></li>
-                                <li><a href="https://webzine.kumhoenc.com/webzine/202401/00_main/main.asp" target="_blank" title="새창링크">웹진</a></li>
-                                <li><a href="https://kumhoenc.recruiter.co.kr/appsite/company/index" target="_blank" title="새창링크">인재채용</a></li>
-                                <li><a href="guide.html">채용가이드</a></li>
+                    <li><a href="biz01.html">건축사업</a></li>
+                    <li><a href="biz02.html">토목사업</a></li>
+                    <li><a href="biz03.html">주택사업</a></li>
+                    <li><a href="biz04.html">플랜트/환경사업</a></li>
+                    <li class="on" data-menu="on"><a href="biz05.html">사업실적검색</a></li>
                 </ul>
            </nav>
            <div class="contents" id="contents">
+            <div class="cts_biz05">
+                <div class="wrapper">
+                    <div class="search_group">
+                        <form> <!-- 모든 입력양식 form 태그안에 들어와야 함.
+                                    단, form 태그를 삭제할 수도 있으니, div처럼 쓰지말고
+                                    이 태그가 없다고 생각 (아이디/클래스 주지말기) -->
+                            <fieldset> <!-- 회원정보와 부가정보 입력을 받으면 정보의 묶음 -->
+                                <legend>검색</legend><!-- 이 form 태그의 역할 -->
+                                <div class="search">
+                                    <!-- label은 <input type="text">의 제목
+                                         label에는 for input id를 동일한 단어를 써줘서 그 입력창의 제목이라는 것을 표시
+                                         submit 버튼은 필요 없음 - value 써줌 -->
+                                    <label for="keyword">검색어</label>
+                                    <input type="text" id="keyword" placeholder="검색어를 입력해주세요"> <!-- 검색어입력 -->
+                                    <input type="submit" value="확인"> <!-- 검색버튼/전송 -->
+                                </div>
+                            </fieldset>
 
+                        </form>
+                    </div>
+                </div>
+            </div>
            </div>
         </div>
         <footer class="footer">
