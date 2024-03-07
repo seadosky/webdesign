@@ -328,8 +328,7 @@
     .header .gnb ul.depth1 > li[data-menu="on"] > a span {
         position: relative;
     }
-    .header .gnb ul.depth1 > li.on > ul.depth2,
-    .header .gnb ul.depth1 > li[data-menu="on"] > ul.depth2 {
+    .header .gnb ul.depth1 > li.on > ul.depth2 {
         display: block;
         background-color: #f4f4f4;
     }
@@ -622,7 +621,7 @@
     text-align: center;
     padding: 0 5px;
     font-size: 20px;
-    width: 140px;
+    width: 150px;
     white-space: nowrap;
 }
 .lnb ul li.on a,
@@ -640,7 +639,7 @@
     }
     .lnb ul li a {
         font-size: 18px;
-        width: 125px;
+        width: 135px;
     }
     
 }/*m*/
@@ -676,12 +675,13 @@
     .lnb {
         padding: 0;
         overflow-x: auto;
+        overflow-y: hidden;
         height: 60px;
     }
     .lnb ul li a {
         line-height: 60px;
         font-size: 15px;
-        width: 106px;
+        width: 116px;
     }
     .lnb ul li.on a,
     .lnb ul li a:hover {

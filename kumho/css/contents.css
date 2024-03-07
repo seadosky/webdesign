@@ -667,14 +667,183 @@
     width: 100%;
     margin: 50px auto;
 }
+.cts_biz05 .join_group h2 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #2d2d2d;
+    margin-bottom: 20px;
+}
 .cts_biz05 .join_group .agree_box {
     width: 100%;
     height: 226px;
     border: 1px solid #cccccc;
     padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
 }
 .cts_biz05 .join_group .agree_box .inner1 {
     width: 100%;
     height: 100%;
     overflow-y: auto;
+}
+.cts_biz05 .join_group .agree_box .inner1::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: transparent;
+}
+  
+/* 썸(thumb) 추가 */
+.cts_biz05 .join_group .agree_box .inner1::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+.cts_biz05 .join_group .agree_box .inner2 {
+    white-space: pre-line;
+}
+.cts_biz05 .join_group .agree_box strong {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d2d2d;
+}
+.cts_biz05 .join_group .agree_btn {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 15px 0 50px 0;
+}
+.cts_biz05 .join_group .agree_btn input {
+    display: none;
+}
+.cts_biz05 .join_group .agree_btn label {
+    padding: 5px 0 5px 25px;
+    display: block;
+    position: relative; /* before 정렬의 기준 */
+    cursor: pointer;
+}
+.cts_biz05 .join_group .agree_btn label::before {
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    width: 15px;
+    height: 15px;
+    content: "";
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath id='checkbox-circle-line' d='M9,16a7,7,0,1,1,7-7A7,7,0,0,1,9,16Zm0-1.4A5.6,5.6,0,1,0,3.4,9,5.6,5.6,0,0,0,9,14.6Zm-.7-2.8L5.332,8.83l.99-.99L8.3,9.82l3.96-3.96.99.99Z' transform='translate(-2 -2)' fill='%233d3d3d'/%3E%3C/svg%3E%0A");
+}
+/* html에서 미리 체크되어 있게 <input type="radio" checked="checked">를 주면
+css에서는 input:checked 로 선택 */
+.cts_biz05 .join_group .agree_btn input:checked + label::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath id='checkbox-circle-fill' d='M9,16a7,7,0,1,1,7-7A7,7,0,0,1,9,16Zm-.7-4.2,4.95-4.95-.99-.99L8.3,9.82,6.322,7.84l-.99.99Z' transform='translate(-2 -2)' fill='%23bf0d0d'/%3E%3C/svg%3E%0A");
+}
+.cts_biz05 .join_group .info .info_box {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.cts_biz05 .join_group .info .info_box > div {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+.cts_biz05 .join_group .info .info_box > div:last-child {
+    border-bottom: 0;
+}
+.cts_biz05 .join_group .info .info_box .user_id label,
+.cts_biz05 .join_group .info .info_box .user_pw label,
+.cts_biz05 .join_group .info .info_box .user_mail label {
+    width: 60px;
+    height: 100%;
+    font-size: 0;
+    line-height: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.cts_biz05 .join_group .info .info_box .user_id label {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='16' viewBox='0 0 12 16'%3E%3Cpath id='user-line' d='M4,17a6,6,0,1,1,12,0H14.5a4.5,4.5,0,1,0-9,0Zm6-6.857A4.535,4.535,0,0,1,5.5,5.571a4.5,4.5,0,1,1,9,0A4.535,4.535,0,0,1,10,10.143Zm0-1.524A3.048,3.048,0,1,0,7,5.571,3.023,3.023,0,0,0,10,8.619Z' transform='translate(-4 -1)' fill='%235a5a5a'/%3E%3C/svg%3E%0A");
+    background-size: 12px auto;
+}
+.cts_biz05 .join_group .info .info_box .user_pw label {
+    background-size: 14px auto;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='16' viewBox='0 0 14 16'%3E%3Cpath id='lock-line' d='M15.444,8.4h.778A.789.789,0,0,1,17,9.2v8a.789.789,0,0,1-.778.8H3.778A.789.789,0,0,1,3,17.2v-8a.789.789,0,0,1,.778-.8h.778V7.6A5.524,5.524,0,0,1,10,2a5.524,5.524,0,0,1,5.444,5.6ZM4.556,10v6.4H15.444V10Zm4.667,1.6h1.556v3.2H9.222Zm4.667-3.2V7.6A3.946,3.946,0,0,0,10,3.6a3.946,3.946,0,0,0-3.889,4v.8Z' transform='translate(-3 -2)' fill='%235a5a5a'/%3E%3C/svg%3E%0A");
+}
+.cts_biz05 .join_group .info .info_box .user_mail label {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='13.5' viewBox='0 0 15 13.5'%3E%3Cpath id='mail-line' d='M2.75,3h13.5a.75.75,0,0,1,.75.75v12a.75.75,0,0,1-.75.75H2.75A.75.75,0,0,1,2,15.75v-12A.75.75,0,0,1,2.75,3ZM15.5,6.178,9.554,11.5,3.5,6.162V15h12ZM3.884,4.5l5.663,5,5.579-5Z' transform='translate(-2 -3)' fill='%235a5a5a'/%3E%3C/svg%3E%0A");
+    background-size: 15px auto;
+}
+.cts_biz05 .join_group .info .info_box .user_id input,
+.cts_biz05 .join_group .info .info_box .user_pw input {
+    width: calc(100% - 83px);
+}
+.cts_biz05 .join_group .info .info_box input[type="text"],
+.cts_biz05 .join_group .info .info_box input[type="password"] {
+    font-size: 17px;
+    font-weight: 700;
+    color: #2d2d2d;
+    border: 0;
+    outline: 0;
+}
+.cts_biz05 .join_group .info .info_box input[type="text"]::placeholder,
+.cts_biz05 .join_group .info .info_box input[type="password"]::placeholder {
+    font-weight: 400;
+    color: #a1a1a1;
+}
+.cts_biz05 .join_group .info .info_box .user_mail input {
+    width: calc(100% - 205px);
+}
+.cts_biz05 .join_group .info .info_box .user_mail select {
+    font-size: 17px;
+    color: #2d2d2d;
+    width: 120px;
+    border: 0;
+    outline: 0;
+}
+.cts_biz05 .join_group .info .info_box .user_gender {
+    justify-content: center; /* 좌우의 가운데 */
+}
+.cts_biz05 .join_group .info .info_box .user_gender input {
+    display: none; 
+}
+.cts_biz05 .join_group .info .info_box .user_gender label {
+    width: calc(50% - 25px);
+    margin: 0 2px;
+    line-height: 27px;
+    border: 1px solid #999;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #3d3d3d;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+}
+.cts_biz05 .join_group .info .info_box .user_gender input:checked + label {
+    border: 2px solid #BF0D0D;
+    color: #BF0D0D;
+}
+.cts_biz05 .join_group .info input[type="submit"] {
+    width: 100%;
+    background-color: #BF0D0D;
+    color: #fff;
+    border-radius: 10px;
+    border: 0;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 50px;
+    cursor: pointer; /* 오버시 마우스 포인터 손가락모양 */
+}
+@media screen and (max-width:1024px){
+    .cts_biz05 .join_group h2 {
+        font-size: 20px;
+    }
+    .cts_biz05 .join_group .agree_box strong {
+        font-size: 16px;
+    }
+    .cts_biz05 .join_group .info .info_box input[type="text"],
+    .cts_biz05 .join_group .info .info_box input[type="password"] {
+    font-size: 15px;
+    }
+    .cts_biz05 .join_group .info input[type="submit"] {
+        font-size: 18px;
+    }
 }
