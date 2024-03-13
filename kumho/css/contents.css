@@ -34,8 +34,22 @@
 }
 .cts_greeting .ceo {
     position: absolute;
-    left: calc(50% + 230px);
+    left: calc(50% + 177px);
     top: 20px;
+}
+.cts_greeting .ceo .ceo_photo{
+    position: relative;
+}
+.cts_greeting .ceo .ceo_photo::after {
+    position: absolute;
+    right: -52px;
+    bottom: 156px;
+    z-index: -1;
+    width: 558px;
+    height: 639px;
+    content: "";
+    background-color: #f4f4f4;
+    border-radius: 180px 180px 180px 180px;
 }
 .cts_greeting .ceo .sign {
     display: flex;
@@ -49,41 +63,140 @@
     font-weight: 700;
 }
 @media screen and (max-width:1320px){
+    .cts_greeting {
+        margin: 90px 0 120px 0;
+    }
     .cts_greeting .tit {
-        font-size: 36px;
+        font-size: 35px;
         margin: 0 0 40px 0;
     }
     .cts_greeting p {
-        margin-right: 550px;
+        margin-right: calc(100% - 530px);
     }
     .cts_greeting .ceo {
-        left: calc(50% + 150px);
+        left: calc(50% + 151px);
+    }
+    .cts_greeting .ceo .ceo_photo::after {
+        right: -52px;
+        bottom: 156px;
+        width: 450px;
+        height: 520px;
+        border-radius: 150px 150px 150px 150px;
+    }
+    .cts_greeting .ceo .ceo_photo img { 
+        width: auto;
+        height: 650px;
     }
 }
 @media screen and (max-width:1024px){
     .cts_greeting {
-        margin: 100px 0 210px 0;
+        margin: 70px 0 100px 0;
     }
     .cts_greeting .tit {
-        font-size: 36px;
+        font-size: 30px;
         margin: 0 0 30px 0;
     }
     .cts_greeting p {
-        margin-right: 640px;
+        margin-right: calc(100% - 350px);
     }
     .cts_greeting .ceo {
-        left: auto;
-        right: 20px;
+        left: calc(50% + 52px);
+        top: 178px;
+    }
+    .cts_greeting .ceo .ceo_photo::after {
+        right: -32px;
+        bottom: 150px;
+        width: 350px;
+        height: 450px;
+        border-radius: 120px 120px 120px 120px;
+    }
+    .cts_greeting .ceo .ceo_photo img { 
+        width: auto;
+        height: 550px;
+    }
+    .cts_greeting .ceo .sign strong {
+        font-size: 16px;
     }
 }
 @media screen and (max-width:768px){
+    .cts_greeting {
+        margin: 50px 0 70px 0;
+    }
+    .cts_greeting .tit {
+        font-size: 28px;
+        margin: 0 0 25px 0;
+    }
+    .cts_greeting p {
+        margin: 0;
+        width: 100%;
+    }
+    .cts_greeting .ceo {
+        left: calc(50% + 20px);
+        top: auto;
+        position: relative;
+        margin: 30px 0 0 0;
+    }
+    .cts_greeting .ceo .ceo_photo::after {
+        right: -47px;
+        bottom: 5px;
+        width: 280px;
+        height: 360px;
+        border-radius: 80px 80px 80px 80px;
+    }
+    .cts_greeting .ceo .ceo_photo img { 
+        width: auto;
+        height: 350px;
+    }
+    .cts_greeting .ceo .sign {
+        display: block;
+        width: 100%;
+    }
+    .cts_greeting .ceo .sign strong {
+        font-size: 14px;
+    }
     .cts_greeting .tit br.mon {
         display: none;
     }
     .cts_greeting p {
         margin: 0;
     }
+    .cts_greeting .ceo .sign {
+        margin-right: 20px;
+    }
 }/*m*/
+@media screen and (max-width:500px){
+    .cts_greeting {
+        margin: 40px 0 50px 0;
+    }
+    .cts_greeting .tit {
+        font-size: 20px;
+        margin: 0 0 25px 0;
+    }
+    .cts_greeting p strong {
+        font-size: 15px;
+    }
+    .cts_greeting .ceo {
+        left: calc(50% - 30px);
+    }
+    .cts_greeting .ceo .ceo_photo::after {
+        right: -57px;
+        bottom: 5px;
+        width: 250px;
+        height: 260px;
+        border-radius: 60px 60px 60px 60px;
+    }
+    .cts_greeting .ceo .ceo_photo img { 
+        width: auto;
+        height: 250px;
+    }
+    .cts_greeting .ceo .sign strong {
+        font-size: 14px;
+    }
+    .cts_greeting .ceo .sign img {
+        width: 70px;
+        height: auto;
+    }
+}
 
 /* 연혁 - 회사소개 */
 .cts_history {
