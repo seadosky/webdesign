@@ -1413,11 +1413,13 @@ css에서는 input:checked 로 선택 */
     color: #666;
     margin: 3px 0 15px 0;
 }
-.cts_location .con_info .con_notice span {
+.cts_location .con_info .con_notice span a {
     color: #BF0D0D;
     border: 1px solid #BF0D0D;
     border-radius: 10px;
-    padding: 7px 14px;
+    padding: 6px 14px;
+    display: block;
+    width: 185px;
 }
 .cts_location .con_trans {
     display: flex;
@@ -1430,6 +1432,11 @@ css에서는 input:checked 로 선택 */
 }
 .cts_location .con_trans ul li {
     margin: 3px 0;
+}
+.cts_location .con_trans ul li.bus1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 .cts_location .con_trans ul li .subway,
 .cts_location .con_trans ul li .bus {
