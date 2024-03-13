@@ -1344,7 +1344,6 @@ css에서는 input:checked 로 선택 */
 .cts_location .con_info {
     margin: 45px 0 65px 0;
     display: flex;
-    justify-content: space-between;
 }
 .cts_location .con_info > strong {
     font-size: 40px;
@@ -1423,7 +1422,6 @@ css에서는 input:checked 로 선택 */
 }
 .cts_location .con_trans {
     display: flex;
-    justify-content: space-between;
 }
 .cts_location .con_trans strong {
     font-size: 40px;
@@ -1475,7 +1473,7 @@ css에서는 input:checked 로 선택 */
 
 @media screen and (max-width:1320px){
     .cts_location .con_trans ul li .detail {
-        width: 314px;
+        width: 306px;
     }
 }
 @media screen and (max-width:1024px){
@@ -1507,6 +1505,15 @@ css에서는 input:checked 로 선택 */
         width: 100%;
         margin-bottom: 10px;
     }
+    .cts_location .con_trans ul li.bus1 {
+        justify-content: flex-start;
+    }
+    .cts_location .con_trans ul li.bus1 .way1 {
+        margin: 0 20px 0 3px;
+    }
+    .cts_location .con_trans ul li .detail {
+        width: 314px;
+    }
 }
 @media screen and (max-width:768px){
     .cts_location {
@@ -1524,6 +1531,9 @@ css에서는 input:checked 로 선택 */
     }
     .cts_location .con_trans strong {
         font-size: 25px;
+    }
+    .cts_location .con_trans ul li.bus1 {
+        display: block;
     }
     .cts_location .con_trans ul li .subway,
     .cts_location .con_trans ul li .bus {
