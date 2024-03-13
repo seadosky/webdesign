@@ -1396,6 +1396,9 @@ css에서는 input:checked 로 선택 */
         font-size: 30px;
         margin-bottom: 20px;
     }
+    .cts_location .cts_map .map {
+        height: 370px;
+    }
     .cts_location .con_info > strong {
         font-size: 25px;
     }
@@ -1415,5 +1418,10 @@ css에서는 input:checked 로 선택 */
         padding: 3px 10px;
         width: 68px;
         margin: 0 15px 0 61px;
+    }
+}
+@media screen and (max-width:500px){
+    .cts_location .cts_map .map {
+        height: 270px;
     }
 }
