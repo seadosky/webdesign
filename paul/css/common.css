@@ -47,7 +47,8 @@
 html, body {
     font-family: 'S-CoreDream', sans-serif; /* 서체 serif 명조 sans-serif 고딕 */
     font-size: 17px; 
-    color: #231815;
+    background-color: #ede8e3;
+    color: #674b40;
     font-weight: 300;
     line-height: 1.2; 
     word-break: keep-all;

@@ -5,10 +5,72 @@
 /*****
     파일명 : main.css
     작성자 : 이유경
-    작성일 : 2024.02.28
+    작성일 : 2024.03.14
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다 )
 *****/
-
-strong {
-    font-size: 2rem;
+.container {
+    margin-top: 150px; /* header 높이만큼 */
 }
+@media screen and (max-width:1024px){
+    .container {
+        margin-top: 100px;
+    }
+}
+@media screen and (max-width:768px){
+    .container {
+        margin-top: 74px;
+    }
+}
+.visual .swiper {
+
+} /* 팝업의 높이가 됨 */
+.visual .swiper-slide img {
+     width:100%;
+}
+.swiper-slide img.popup_m {
+    display: none;
+}
+@media screen and (max-width:1640px){
+    .visual .swiper-slide {
+        overflow: hidden;
+    }
+    .visual .swiper-slide img {
+        width: 110%;
+        translate: (-5%, 0);
+    }
+}
+@media screen and (max-width:769px) and (max-width:1024px){
+   /* .visual .swiper-slide {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+    }
+    .visual .swiper-slide img {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: auto;
+        height: 400px;
+        transform: translate(-50%, 0);
+    } */
+}
+@media screen and (max-width:768px){
+    .swiper-slide img.popup_pc {
+        display: none;
+    }
+    .swiper-slide img.popup_m {
+        display: block;
+    }
+    .visual .swiper-slide img {
+        width: 100%;
+        translate: (0, 0);
+    }
+}
+
+.product {
+    height: 1000px;
+ }
+ .brand {
+    height: 1000px;
+    background-color: #e80a4d;
+ }

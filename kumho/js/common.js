@@ -38,7 +38,7 @@ $(document).ready(function(){
    let window_w
    function device_chk(){
         window_w = $(window).width()
-        if(window_w > 1024){ //px버전
+        if(window_w > 1024){ //pc버전
             device_status = 'pc'
         }else{ //모바일
             device_status = 'mobile'
