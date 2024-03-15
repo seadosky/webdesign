@@ -54,7 +54,7 @@ html, body {
     word-break: keep-all;
     word-wrap: break-word; /* 만약 단어가 엄청 길면 분리해서 줄바꿈 */
 }
-.font {
+.f_bright {
     font-family: "Noto Serif KR", serif;
 }
 .wrapper { /* 홈페이지 넓이를 제한하고 가운데 정렬 */
