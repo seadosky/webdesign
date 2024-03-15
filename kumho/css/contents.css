@@ -49,7 +49,7 @@
     height: 639px;
     content: "";
     background-color: #f4f4f4;
-    border-radius: 180px 180px 180px 180px;
+    border-radius: 50px;
 }
 .cts_greeting .ceo .sign {
     display: flex;
@@ -81,7 +81,7 @@
         bottom: 156px;
         width: 450px;
         height: 520px;
-        border-radius: 150px 150px 150px 150px;
+        border-radius: 40px;
     }
     .cts_greeting .ceo .ceo_photo img { 
         width: auto;
@@ -108,7 +108,7 @@
         bottom: 150px;
         width: 350px;
         height: 450px;
-        border-radius: 120px 120px 120px 120px;
+        border-radius: 30px;
     }
     .cts_greeting .ceo .ceo_photo img { 
         width: auto;
@@ -141,7 +141,7 @@
         bottom: 5px;
         width: 280px;
         height: 360px;
-        border-radius: 80px 80px 80px 80px;
+        border-radius: 20px;
     }
     .cts_greeting .ceo .ceo_photo img { 
         width: auto;
@@ -183,7 +183,7 @@
         bottom: 5px;
         width: 250px;
         height: 260px;
-        border-radius: 60px 60px 60px 60px;
+        border-radius: 10px;
     }
     .cts_greeting .ceo .ceo_photo img { 
         width: auto;
