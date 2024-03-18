@@ -26,7 +26,7 @@
 }
 
 /* 영문 웹폰트 */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Nanum+Myeongjo&family=Noto+Serif+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
 
 *::selection{
     background-color: #e80a4d;
