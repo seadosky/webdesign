@@ -568,13 +568,16 @@ footer {
       left: 18px;
       top: 10px;
     }
+    footer .f_nav {
+      margin: 10px 0;
+    }
     footer .f_nav button.f_nav_open {
       display: block;
     }
     footer .f_nav button.f_nav_open,
     footer .f_nav button.f_nav_close {
       width: 100%;
-      line-height: 32px;
+      line-height: 40px;
       border: 1px solid #674b40;
       border-radius: 5px;
       text-align: center;
@@ -601,15 +604,20 @@ footer {
    }
    footer .f_nav ul {
       position: absolute;
-      left: 0;
+      left: 20px;
       bottom: 319px;
-      width: 100%;
+      z-index: 10;
+      width: calc(100% - 40px);
       border: 1px solid #674b40;
       border-radius: 5px;
+      background-color: #ede8e3;
       text-align: center;
       display: none;
    }
    footer .f_nav.open ul {
       display: block;
+   }
+   footer .f_nav.open ul li::after {
+      display: none;
    }
  }

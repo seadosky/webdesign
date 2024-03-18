@@ -7,6 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!-- AOS를 작동시키기 위한 css와 js파일 -->
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/common.js"></script>
@@ -119,8 +121,8 @@
             </section>
             <section class="product">
                 <div class="wrapper">
-                    <h2>MD’s Pick</h2>
-                    <div class="list">
+                    <h2 data-aos="fade-up">MD’s Pick</h2>
+                    <div class="list" data-aos="fade-up" data-aos-delay="150">
                         <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
                             <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
                                 <li class="swiper-slide">
@@ -220,26 +222,26 @@
                 <div class="wrapper">
                     <div class="photo"><img src="images/main/brand_bg.png" alt="커피원두사진"></div>
                     <div class="inner">
-                        <h2>SIGNATURE <br>BLEND</h2>
-                        <p>엄선된 원두로 직접 로스팅한 후, 폴바셋만의 비법으로 블렌딩하여 탄생한 
+                        <h2 data-aos="fade-right">SIGNATURE <br>BLEND</h2>
+                        <p data-aos="fade-right">엄선된 원두로 직접 로스팅한 후, 폴바셋만의 비법으로 블렌딩하여 탄생한 
                             Paul Bassett의 대표원두인 “시그니처 블랜드(Signature Blend)”와 
                             폴 바셋에게 사사받은 오랜 경력의 전문 바리스타 출신 
                             “Coffee Ambassador”의 관리 서비스 프로그램을 제안합니다.</p>
                         <div class="list">
                             <ul>
-                                <li>
+                                <li data-aos="fade-up">
                                     <img src="images/main/brand_ico01.png" alt="">
                                     <strong>스페셜티 <br>생두 셀렉션</strong>
                                 </li>
-                                <li>
+                                <li data-aos="fade-up" data-aos-delay="200">
                                     <img src="images/main/brand_ico02.png" alt="">
                                     <strong>국내 로스팅 및 <br>철저한 생산관리 시스템</strong>
                                 </li>
-                                <li>
+                                <li data-aos="fade-up" data-aos-delay="400">
                                     <img src="images/main/brand_ico03.png" alt="">
                                     <strong>생두의 철저한 <br>항온 항습 관리</strong>
                                 </li>
-                                <li>
+                                <li data-aos="fade-up" data-aos-delay="600">
                                     <img src="images/main/brand_ico04.png" alt="">
                                     <strong>시그니처 블렌드의 <br>다양한 맛과 향</strong>
                                 </li>
@@ -358,7 +360,7 @@
                         <li class="link03"><a href="#n"><span>e-Shop</span></a></li>
                     </ul>
                 </div>
-                <div class="f_nav open">
+                <div class="f_nav">
                     <button class="f_nav_open" title="열기">개인정보처리방침</button>
                     <ul>
                         <li><a href="#n">개인정보처리방침</a></li>
