@@ -190,7 +190,7 @@
 }
  @media screen and (max-width:500px){
     .product {
-        margin: 60px 0;
+        margin: 50px 0;
      }
      .product h2 {
         font-size: 3rem;
@@ -200,6 +200,12 @@
         width: 30%;
         max-width: 90%;
      }
+     .product .list ul li a::before {
+      left: 5px;
+      bottom: 7px;
+      height: 250px;
+      border-radius: 133px 133px 50px 50px;
+   }
  }
 
  .brand {
@@ -415,6 +421,38 @@
         display: none;
     }
 }
+@media screen and (max-width:500px){
+   .social {
+      margin: 50px 0 55px 0;
+  }
+  .social h2 {
+      font-size: 2.941rem;
+      margin-bottom: 20px;
+  }
+  .social .sns ul {
+      justify-content: center;
+  }
+  .social .sns ul li {
+      margin-left: 8px;
+  }
+  .social .list {
+      margin: 20px 0 0 0;
+  }
+  .social .list ul li a .photo img {
+      width: calc(100% - 40px);
+      margin-left: 20px;
+  }
+  .social .list ul li a .cate img{
+      width: 100%;
+  }
+  .social .list ul li a strong {
+      margin: 10px 0 7px 20px;
+  }
+  .social .list ul li a em {
+   margin-left: 20px;
+   display: block;
+  }
+}
 aside {
    position: relative;
 }
@@ -545,6 +583,9 @@ footer {
     }
  }
  @media screen and (max-width:768px){
+   footer .f_logo {
+      left: calc(50% - 29.5px);
+   }
    footer .f_link ul {
       background-color: #231815;
       border-radius: 5px;
@@ -587,7 +628,7 @@ footer {
     footer .f_nav button.f_nav_close::after {
       position: absolute;
       right: 15px;
-      top: 12px;
+      top: 16px;
       width: 12px;
       height: 7px;
       opacity: 0.8;
@@ -605,7 +646,7 @@ footer {
    footer .f_nav ul {
       position: absolute;
       left: 20px;
-      bottom: 319px;
+      bottom: 344px;
       z-index: 10;
       width: calc(100% - 40px);
       border: 1px solid #674b40;
@@ -619,5 +660,22 @@ footer {
    }
    footer .f_nav.open ul li::after {
       display: none;
+   }
+   @media screen and (max-width:500px){
+      footer .f_link ul li.link01 a span::before {
+         left: 29px;
+         top: 10px;
+       }
+       footer .f_link ul li.link02 a span::before {
+         left: 36px;
+         top: 10px;
+       }
+       footer .f_link ul li.link03 a span::before {
+         left: 14px;
+         top: 10px;
+       }
+       footer .f_info span {
+         margin: 0 30px 20px 0;
+       }
    }
  }
