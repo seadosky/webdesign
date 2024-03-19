@@ -646,7 +646,7 @@ footer {
    footer .f_nav ul {
       position: absolute;
       left: 20px;
-      bottom: 344px;
+      bottom: 40px;
       z-index: 10;
       width: calc(100% - 40px);
       border: 1px solid #674b40;
