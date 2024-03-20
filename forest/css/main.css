@@ -1,0 +1,103 @@
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+
+/*****
+    파일명 : main.css
+    작성자 : 이유경
+    작성일 : 2024.03.14
+    설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다 )
+*****/
+.visual {
+   background-color: #2691D9;
+   color: #fff;
+}
+.tree {
+   background-color: #3FB488;
+}
+.biz {
+   background-color: #043D55;
+   color: #fff;
+}
+.news {
+   background-color: #73CBD1;
+}
+footer {
+   height: 500px;
+   background-color: #041F3D;
+   color: #fff;
+}
+/***************** 
+   page에서 자동생성한 pagenation 
+   #fp-nav.fp-left 동일한 선택자 두개가 존재할때
+   꼭 내거를 먼저 적용되게 하기 위해서
+   앞에 body를 추가함
+   body라는 상위요소부터 선택자를 입력한 스타일이 먼저 적용됨
+*******************/
+body #fp-nav.fp-left {
+   left: 34px;
+}
+body #fp-nav ul li .fp-tooltip {
+   color: rgba(255, 255, 255, 0.6);
+   font-size: 15px;
+   font-family: inherit;
+   opacity: 1;
+   width: auto;
+}
+body #fp-nav ul li a span, body .fp-slidesNav ul li a span {
+   height: 5px;
+   width: 5px;
+   border: 0;
+   background: rgba(255, 255, 255, 0.6);
+   margin: -2px 0 0 -2px;
+  }
+  body #fp-nav ul li a.active span, 
+  body .fp-slidesNav ul li a.active span, 
+  body #fp-nav ul li:hover a.active span, 
+  body .fp-slidesNav ul li:hover a.active span {
+   height: 5px;
+   width: 5px;
+   margin: -2px 0 0 -2px;
+   background: #fff;
+}
+body #fp-nav ul li:last-child { /* footer 동그라미 삭제 */
+   display: none;
+}
+body #fp-nav ul li, body .fp-slidesNav ul li {
+   margin: 25px 7px;
+}
+body #fp-nav ul li:hover .fp-tooltip, body #fp-nav.fp-show-active a.active + .fp-tooltip {
+   color: #fff;
+   border: 1px solid #fff;
+   border-radius: 15px;
+   line-height: 30px;
+   font-weight: 700;
+   width: 110px;
+   top: -9px;
+   padding-left: 28px;
+   margin-left: -28px;
+}
+
+/* 검은색일때 */
+body #fp-nav[data-color='black'] ul li .fp-tooltip {
+   color: rgba(102, 102, 102, 0.6);
+}
+body #fp-nav[data-color='black'] ul li a span, 
+body .fp-slidesNav ul li a span {
+   background: rgba(102, 102, 102, 0.6);
+  }
+  body #fp-nav[data-color='black'] ul li a.active span, 
+  body .fp-slidesNav ul li a.active span, 
+  body #fp-nav[data-color='black'] ul li:hover a.active span, 
+  body .fp-slidesNav ul li:hover a.active span {
+   background: #666;
+}
+body #fp-nav[data-color='black'] ul li:hover .fp-tooltip, 
+body #fp-nav[data-color='black'].fp-show-active a.active + .fp-tooltip {
+   color: #666;
+   border: 1px solid #666;
+}
+
+
+.visual .swiper { height:1000px } /* 팝업의 높이가 됨 */
+.visual .swiper-slide img { display:block; width:100%; height:100%; object-fit:cover; }
