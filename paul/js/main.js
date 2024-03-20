@@ -77,4 +77,25 @@ AOS.init({
 	easing: 'ease', // 가속도
 	});
 
+   /* 관련사이트
+    f_nav_open 클릭하면 목록이 나타남
+        footer .f_nav ul 목록이 나타남
+        f_nav_open 사라짐
+        f_nav_close 나타남
+    f_nav_close 클릭하면 목록이 사라짐
+        footer .f_nav ul 목록이 사라짐
+        f_nav_open 나타남
+        f_nav_close 사라짐
+        */
+		$('footer .f_nav button.f_nav_open').on('click', function(){
+			$('footer .f_nav ul').slideDown()
+			$(this).hide()
+			$('footer .f_nav button.f_nav_close').show()
+		})
+		$('footer .f_nav button.f_nav_close').on('click', function(){
+			$('footer .f_nav ul').slideUp()
+			$(this).hide()
+			$('footer .f_nav button.f_nav_open').show()
+		})
+
 })//$(document).ready
