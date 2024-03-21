@@ -92,7 +92,6 @@ header.black .tnb ul li.lang a {
 }
 @media screen and (max-width:768px){
     header .gnb ul li a {
-        padding: 30px 20px;
-        font-size: 22px;
+        display: none;
     }
 }
