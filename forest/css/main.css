@@ -8,12 +8,289 @@
     작성일 : 2024.03.14
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다 )
 *****/
-.visual {
-   background-color: #2691D9;
-   color: #fff;
+.visual, 
+.visual .swipe, 
+.visual ul li .photo {
+   height: 100vh;  /* 팝업의 높이제어 */
 }
-.tree {
-   background-color: #3FB488;
+.visual ul li .tit {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   width: 1280px;
+   z-index: 10;
+   color: #fff;
+   font-size: 20px;
+   text-align: center;
+}
+.visual ul li .tit h2 {
+   font-size: 60px;
+   font-weight: 700;
+   margin-bottom: 10px;
+}
+.visual ul li .tit a {
+   display: inline-block;
+   margin-top: 27px;
+   font-size: 20px;
+   border: 2px solid #fff;
+   border-radius: 25px;
+   padding: 9px 50px;
+}
+.visual ul li .photo img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+/* visual 이미지가 보일때 애니메이션 작동 */
+.visual ul li.swiper-slide-active .photo img {
+   animation-name: visual_img;
+   animation-duration: 3s;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+}
+@keyframes visual_img { /* 애니메이션을 효과를 미리 설정함 */
+	0% { transform:scale3d(1.2 ,1.2 ,1) }  /* 애니메이션을 시작할때의 속성 */
+	100% { transform:scale3d(1, 1, 1) } /* 애니메이션이 종료될때의 속성 */
+}
+.visual ul li.swiper-slide-active .tit h2,
+.visual ul li.swiper-slide-active .tit p,
+.visual ul li.swiper-slide-active .tit a {
+   animation-name: visual_tit;
+   animation-duration: 1s;
+   animation-iteration-count: 1;
+   animation-fill-mode: forwards;
+   opacity: 0;
+}
+.visual ul li.swiper-slide-active .tit p {
+   animation-delay: 0.3s;
+}
+.visual ul li.swiper-slide-active .tit a {
+   animation-delay: 0.6s;
+}
+@keyframes visual_tit { /* 애니메이션을 효과를 미리 설정함 */
+	0% { transform:translate(0, 50px); opacity: 0; }  /* 애니메이션을 시작할때의 속성 */
+	100% { transform:translate(0, 0); opacity: 1; } /* 애니메이션이 종료될때의 속성 */
+}
+.visual .paging {
+   position: absolute;
+   left: calc(50% - 640px);
+   bottom: 85px;
+   z-index: 11;
+   color: #fff;
+   width: 1280px;
+   display: flex;
+}
+.visual .paging > span {
+   display: block;
+   width: 33.33%;
+   height: 10px;
+   background-color: rgba(255, 255, 255, 0.2);
+   position: relative;
+   opacity: 1;
+   border-radius: 0;
+   margin: 0 !important;
+}
+.visual .paging > span:first-child {
+   border-radius: 5px 0 0 5px;
+}
+.visual .paging > span:last-child {
+   border-radius:  0 5px 5px 0;
+}
+.visual .paging > span > span {
+   position: absolute;
+   left: 0;
+   top: -27px;
+   font-size: 17px;
+}
+.visual .paging > span.swiper-pagination-bullet-active {
+   background-color: #fff;
+   border-radius: 5px;
+}
+.visual .paging > span.swiper-pagination-bullet-active > span {
+   font-weight: 700;
+   padding-left: 20px;
+   position: relative;
+}
+.visual .paging > span.swiper-pagination-bullet-active > span::after {
+   position: absolute;
+   left: 6px;
+   top: 6px;
+   width: 8px;
+   height: 8px;
+   border-radius: 100%;
+   background-color: #fff;
+   content: "";
+}
+.visual .paging .page1 span::before {
+   content: "생명의 숲은";
+}
+.visual .paging .page2 span::before {
+   content: "후원안내";
+}
+.visual .paging .page3 span::before {
+   content: "그린짐 참여신청";
+}
+@media screen and (max-width:1550px){
+   .visual .paging {
+      bottom: 60px;
+   }
+}
+@media screen and (max-width:1320px){
+   .visual ul li .tit {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% - 200px);
+      font-size: 25px;
+   }
+   .visual ul li .tit h2 {
+      font-size: 50px;
+      margin-bottom: 8px;
+   }
+   .visual ul li .tit a {
+      font-size: 20px;
+      padding: 7px 40px;
+      margin-top: 25px;
+   }
+   .visual .paging {
+      left: 20px;
+      bottom: 30px;
+      width: calc(100% - 40px);
+   }
+   .visual .paging > span > span {
+      font-size: 15px;
+   }
+}
+@media screen and (max-width:1024px){
+   .visual ul li .tit {
+      font-size: 20px;
+   }
+   .visual ul li .tit h2 {
+      font-size: 40px;
+      margin-bottom: 5px;
+   }
+   .visual ul li .tit a {
+      font-size: 17px;
+      padding: 5px 35px;
+      margin-top: 20px;
+   }
+   .visual .paging {
+   
+   }
+}
+@media screen and (max-width:768px){
+   .visual ul li .tit {
+      font-size: 18px;
+   }
+   .visual ul li .tit h2 {
+      font-size: 35px;
+      margin-bottom: 5px;
+   }
+   .visual ul li .tit a {
+      font-size: 15px;
+      padding: 5px 30px;
+      margin-top: 20px;
+   }
+   @media screen and (max-width:500px){
+      .visual ul li .tit {
+         font-size: 15px;
+      }
+      .visual ul li .tit h2 {
+         font-size: 32px;
+         margin-bottom: 3px;
+      }
+      .visual ul li .tit a {
+         font-size: 13px;
+         padding: 5px 20px;
+         margin-top: 15px;
+      }
+   }
+
+}
+
+aside.quick {
+   position: fixed;
+   right: 50px;
+   bottom: 85px;
+   z-index: 100;
+}
+aside.quick ul li {
+   margin-top: 5px;
+}
+aside.quick ul li a {
+   display: block;
+   width: 70px;
+   height: 70px;
+   border-radius: 35px;
+   background-color: #4BC9DF;
+   color: #fff;
+   font-size: 13px;
+   padding-top: 39px;
+   text-align: center;   
+   position: relative;  /* before */
+   box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+aside.quick ul li.top a {
+   background-color: #2691D9;
+}
+aside.quick ul li a::before {
+   position: absolute;
+   left: 0;
+   top: 5px;
+   width: 100%;
+   height: 39px;
+   content: "";
+   background-position: center center;
+   background-repeat: no-repeat;
+}
+aside.quick ul li.donation a::before {
+   background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0049 22.0026C6.48204 22.0026 2.00488 17.5255 2.00488 12.0026C2.00488 6.47984 6.48204 2.00269 12.0049 2.00269C17.5277 2.00269 22.0049 6.47984 22.0049 12.0026C22.0049 17.5255 17.5277 22.0026 12.0049 22.0026ZM12.0049 20.0026C16.4232 20.0026 20.0049 16.4209 20.0049 12.0026C20.0049 7.58441 16.4232 4.00269 12.0049 4.00269C7.5866 4.00269 4.00488 7.58441 4.00488 12.0026C4.00488 16.4209 7.5866 20.0026 12.0049 20.0026ZM8.50488 14.0026H14.0049C14.281 14.0026 14.5049 13.7788 14.5049 13.5026C14.5049 13.2265 14.281 13.0026 14.0049 13.0026H10.0049C8.62417 13.0026 7.50488 11.8834 7.50488 10.5026C7.50488 9.12197 8.62417 8.00269 10.0049 8.00269H11.0049V6.00269H13.0049V8.00269H15.5049V10.0026H10.0049C9.72874 10.0026 9.50488 10.2265 9.50488 10.5026C9.50488 10.7788 9.72874 11.0026 10.0049 11.0026H14.0049C15.3856 11.0026 16.5049 12.1219 16.5049 13.5026C16.5049 14.8834 15.3856 16.0026 14.0049 16.0026H13.0049V18.0026H11.0049V16.0026H8.50488V14.0026Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+aside.quick ul li.my a::before {
+   background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 7.26214 17.9831 7.5207 17.9504 7.77457C19.77 8.80413 21 10.7575 21 13C21 16.3137 18.3137 19 15 19H13V22H11V19H8.5C5.46243 19 3 16.5376 3 13.5C3 11.2863 4.30712 9.37966 6.19098 8.50704C6.06635 8.02551 6 7.52039 6 7ZM7.00964 10.3319C5.82176 10.8918 5 12.1008 5 13.5C5 15.433 6.567 17 8.5 17H15C17.2091 17 19 15.2091 19 13C19 11.3056 17.9461 9.85488 16.4544 9.27234L15.6129 8.94372C15.7907 8.30337 16 7.67183 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 8.30783 8.6266 9.46903 9.60019 10.2005L8.39884 11.7995C7.85767 11.3929 7.38716 10.8963 7.00964 10.3319Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+aside.quick ul li.youtube a::before {
+   background-image: url("data:image/svg+xml,%3Csvg width='26' height='17' viewBox='0 0 26 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_30_14)'%3E%3Cpath d='M24.9978 5.46707C24.9978 2.78248 22.6539 0.611572 19.7703 0.611572H6.39206C3.50837 0.611572 1.16455 2.7886 1.16455 5.46707V11.246C1.16455 13.9306 3.50837 16.1015 6.39206 16.1015H19.7637C22.6539 16.1015 24.9912 13.9245 24.9912 11.246V5.46707H24.9978ZM17.1302 8.79377L11.1324 11.5517C10.8953 11.6679 10.0987 11.5089 10.0987 11.2643V5.60773C10.0987 5.357 10.9019 5.198 11.1389 5.32031L16.88 8.21893C17.1236 8.34735 17.3738 8.67146 17.1302 8.79377Z' stroke='white' stroke-width='2' stroke-miterlimit='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_30_14'%3E%3Crect width='25.15' height='16.7191' fill='white' transform='translate(0.506348)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+aside.quick ul li.insta a::before {
+   background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_30_17)'%3E%3Cpath d='M15.2904 3.57007C14.6448 3.57007 14.1172 4.09771 14.1172 4.74324C14.1172 5.38876 14.6448 5.91641 15.2904 5.91641C15.9359 5.91641 16.4635 5.38876 16.4635 4.74324C16.4635 4.09771 15.9359 3.57007 15.2904 3.57007Z' fill='white'/%3E%3Cpath d='M10.0815 5.07446C7.3647 5.07446 5.15869 7.28608 5.15869 9.99728C5.15869 12.7085 7.37031 14.9201 10.0815 14.9201C12.7927 14.9201 15.0043 12.7085 15.0043 9.99728C15.0043 7.28608 12.7927 5.07446 10.0815 5.07446ZM10.0815 13.1519C8.3414 13.1519 6.92686 11.7374 6.92686 9.99728C6.92686 8.25717 8.3414 6.84264 10.0815 6.84264C11.8216 6.84264 13.2362 8.25717 13.2362 9.99728C13.2362 11.7374 11.8216 13.1519 10.0815 13.1519Z' fill='white'/%3E%3Cpath d='M13.9882 20H6.00617C2.69436 20 0 17.3056 0 13.9938V6.01179C0 2.69436 2.69436 0 6.00617 0H13.9882C17.3 0 19.9944 2.69436 19.9944 6.00617V13.9882C19.9944 17.3 17.3 19.9944 13.9882 19.9944V20ZM6.00617 1.88044C3.73281 1.88044 1.88044 3.73281 1.88044 6.00617V13.9882C1.88044 16.2616 3.73281 18.1139 6.00617 18.1139H13.9882C16.2616 18.1139 18.1139 16.2616 18.1139 13.9882V6.00617C18.1139 3.73281 16.2616 1.88044 13.9882 1.88044H6.00617Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_30_17'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+aside.quick ul li.top a::before {
+   background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0001 13.9142L16.793 18.7071L18.2072 17.2929L12.0001 11.0858L5.79297 17.2929L7.20718 18.7071L12.0001 13.9142ZM6.00007 7H18.0001V9H6.00007V7Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1550px){
+   aside.quick {
+      right: 10px;
+   }
+}
+@media screen and (max-width:1024px){
+   aside.quick {
+      display: none;
+   }
+}
+.tree .tit {
+   width: 552px;
+}
+.tree .number {
+   display: flex;
+   color: #76DBD3;
+}
+.tree .number strong {
+   font-size: 150px;
+   font-weight: 700;
+}
+.tree .number .plus {
+   font-size: 80px;
+   margin-top: -20px;
+}
+.tree h2 {
+   font-size: 30px;
+   font-weight: 700;
+   margin: 20px 0 8px 0;
+}
+.tree p {
+   margin-right: 50px;
 }
 .biz {
    background-color: #043D55;
@@ -97,7 +374,22 @@ body #fp-nav[data-color='black'].fp-show-active a.active + .fp-tooltip {
    color: #666;
    border: 1px solid #666;
 }
-
-
-.visual .swiper { height:1000px } /* 팝업의 높이가 됨 */
-.visual .swiper-slide img { display:block; width:100%; height:100%; object-fit:cover; }
+@media screen and (max-width:1550px){
+   body #fp-nav.fp-left {
+      left: 10px;
+   }
+}
+@media screen and (max-width:1320px){
+   body #fp-nav ul li .fp-tooltip {
+      font-size: 14px;
+   }
+   body #fp-nav ul li:hover .fp-tooltip, body #fp-nav.fp-show-active a.active + .fp-tooltip {
+      width: 105px;
+      padding-left: 25px;
+   }
+}
+@media screen and (max-width:1024px){
+   body #fp-nav.fp-left {
+      display: none;
+   }
+}

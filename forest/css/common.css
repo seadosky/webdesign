@@ -56,11 +56,7 @@ html, body {
     margin: 0 auto; /* 가운데 정렬 */
 }
 #wrap { /* id="wrap"에 적용되는 스타일 */
-    min-width: 1280px;  
-    /* PC형에서 wrapper사이즈보다 브라우저 넓이가 작을때
-        가로스크롤바가 생성되고, 오른쪽에 background가 짤리는 현상이 생김.
-        가로스크롤바가 생성되었을 때에도 홈페이지를 정상적으로
-        서비스 하기 위해서 최소 넓이를 입력*/
+    min-width: 100%;  
     overflow: hidden;
     /* 콘텐츠 영역 밖에 나간 요소를 숨김 */
 }
