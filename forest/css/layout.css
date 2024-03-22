@@ -324,8 +324,12 @@ footer .footer_sub .footer_cnt .footer_info strong {
     footer .footer_sub .footer_logo {
         float: none;
     }
-    footer .footer_sub .sns {
+    footer .footer_sub .sns ul {
         float: none;
+        display: flex;
+    }
+    footer .footer_sub .sns ul li {
+        margin-right: 30px;
     }
     footer .footer_sub .footer_cnt {
         margin: 0;

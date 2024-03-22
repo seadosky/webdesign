@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: 'Malgun gothic', '맑은고딕';
+    font-size: 15px;
+    color: #333333;
+}
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+.header .gnb {
+    margin-top: 20px;
+}
+.header .gnb .depth1 > li {
+    width: 200px;
+}
+.header .gnb .depth1 > li > a {
+    display: block;
+    font-size: 20px;
+    line-height: 50px;
+    font-weight: 700;
+    border: 1px solid #ccc;
+}
+.header .gnb .depth1 > li.on > a {
+    background-color: blueviolet;
+    color: #fff;
+}
+.header .gnb .depth2 {
+    background-color: #ededed;
+    display: none;
+}
+.header .gnb .on .depth2 {
+    display: block;
+}
+.header .gnb .depth2 > li > a {
+    display: block;
+    line-height: 30px;
+}
+.header .gnb .depth2 > li > a:hover {
+    background-color: blueviolet;
+    color : #fff;
+} 
+
+.inner {
+    display: flex;
+}
+.visual {
+    height: 350px;
+    position: relative;
+}
+.visual ul li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.5s;
+}
+.visual ul li.active {
+    z-index: 2;
+    opacity: 1;
+}
+.cts {
+    display: flex;
+    height: 200px;
+    position: relative;
+}
+.cts h2 {
+    font-size: 25px;
+    margin: 10px 0;
+}
+.cts .cts_notice ul li {
+    margin-top: 5px;
+}
+.cts .cts_notice ul li a {
+    display: flex;
+    justify-content: space-between;
+}
+.cts .cts_gallery {
+    margin: 0 15px 0 15px;
+}
+.cts .cts_gallery ul {
+    display: flex;
+}
+.cts .cts_gallery ul li {
+    margin-right: 10px;
+}
+.cts .cts_link a img {
+    height: 120px;
+}
+.layer_popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 100;
+    width: 500px;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: blueviolet;
+    color: #fff;
+    border: 2px solid #1d1d1d;
+    display: none;
+}
+.layer_popup h2 {
+    font-size: 25px;
+    font-weight: 700;
+}
+.layer_popup p {
+    margin: 20px 0;
+}
+.layer_popup .close {
+    text-align: right;
+}
+.layer_popup .close button {
+    border: 0;
+    background-color: #fff;
+    color: #333333;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+footer {
+    height: 100px;
+}
+footer .f_inner{
+    display: flex;
+}
+footer .f_info {
+    display: flex;
+}
