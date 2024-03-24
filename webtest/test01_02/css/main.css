@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: 'Malgun gothic', '맑은고딕';
+    font-size: 15px;
+    font-weight: 400;
+    color: #333333;
+}
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.header {
+    height: 100px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+}
+.header .gnb ul.depth1 {
+    display: flex;
+}
+.header .gnb ul.depth1 > li {
+    width: 150px;
+    text-align: center;
+    z-index: 100;
+}
+.header .gnb ul.depth1 > li > a {
+    line-height: 100px;
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+}
+.header .gnb ul.depth1 > li.on > a {
+    background-color: blue;
+    color: #fff;
+}
+.header .gnb ul.depth2 {
+    background-color: aqua;
+    color: #fff;
+    display: none;
+}
+.header .gnb .on ul.depth2 {
+    display: block;
+}
+.header .gnb ul.depth2 > li > a {
+    display: block;
+    line-height: 40px;
+}
+.header .gnb ul.depth2 > li > a:hover {
+    background-color: blue;
+} 

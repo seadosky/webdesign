@@ -14,7 +14,7 @@ a:hover {
     text-decoration: underline;
 }
 body {
-    font-family: Malgun Gothic, '맑은고딕';
+    font-family: 'Malgun Gothic', '맑은고딕';
     font-size: 15px;
     color: #333333;
 }
@@ -31,10 +31,12 @@ body {
 }
 .header .gnb .depth1 {
     display: flex;
+
 }
 .header .gnb .depth1 > li {
     width: 150px;
     text-align: center;
+    z-index: 100;
 }
 .header .gnb .depth1 > li > a {
     line-height: 100px;
