@@ -38,19 +38,35 @@ $(document).ready(function(){
 
     });
 
-    // swiper.autoplay.stop();  /* 일시정지 기능 */
-    // swiper.autoplay.start();  /* 재생 기능 */
-    $('.visual .swiper .stop').on('click', function(){
+  
+    
+
+    /* 
+        .visual .ctrl_btn .stop 정지 버튼을 클릭하면
+        팝업은 정지됨, stop 사라짐, play 버튼 나타남
+        .visual .ctrl_btn .play 재생버튼을 클릭하면
+        팝업은 재생되고,stop버튼은 나타나고, play 사라짐
+    */
+   $('.visual .ctrl_btn .stop').on('click', function(){
         swiper.autoplay.stop();  /* 일시정지 기능 */
-        $(".visual .swiper .play").show();
-        $(".visual .swiper .stop").hide();	
-    })
-    $('.visual .swiper .play').on('click', function(){
+        $(this).hide()
+        $('.visual .ctrl_btn .play').show()
+   })
+   $('.visual .ctrl_btn .play').on('click', function(){
         swiper.autoplay.start();  /* 재생 기능 */
-        $(".visual .swiper .play").hide();
-        $(".visual .swiper .stop").show();	
+        $(this).hide()
+        $('.visual .ctrl_btn .stop').show()
     })
 
+    /*
+        .lost .list > ul > li 클릭하면
+        li에 active 클래스 추가
+        이전에 active 클래스가 있던 li의 active는 삭제
+    */
+    $(' .lost .list > ul > li').on('click', function(){
+        $(' .lost .list > ul > li').removeClass('active')
+        $(this).addClass('active')
+    })
 
 
 

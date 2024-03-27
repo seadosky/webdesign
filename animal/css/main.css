@@ -539,19 +539,19 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
         bottom: 20px;
         transform: translate(0, 0);
     }
-    .visual .ctrl_btn .play,
-    .visual .ctrl_btn .stop {
-        background-size: 9px 9px;
-        border: 1px solid rgba(255, 255, 255, 0.8);
-        border-radius: 100px;
-        width: 25px;
-        height: 25px;
-    }
     .visual .ctrl_btn .prev,
     .visual .ctrl_btn .next {
         display: none;
     }
+    .visual .ctrl_btn .play,
+    .visual .ctrl_btn .stop {
+        background-size: 9px 9px;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        width: 25px;
+        height: 25px;
+    }
 }/*m*/
+
 .lost .slogan {
     position: absolute;
     left: 10%;
@@ -637,13 +637,17 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+.lost .list > ul >li .detail ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
 }
 .lost .list > ul >li .detail ul li a h3 {
     font-size: 20px;
     font-weight: 700;
     margin: 12px 0 10px 0;
-    display: flex; /* 글자 가운데 정렬 */
-    align-items: center;
+    display: flex; 
+    align-items: center; /* 글자 가운데 정렬 */
     /* 무조건 한줄 */
     white-space: nowrap;
     overflow: hidden;
@@ -814,8 +818,73 @@ a태그중에서 href="gnb"인 a태그의 스타일 */
     }
 }/*m*/
 
+.msg {
+    margin: 137px 0 168px 0;
+}
+.msg h2 {
+    display: none;
+}
+.msg p {
+    text-align: center;
+    font-size: 45px;
+    line-height: 1.9;
+    font-weight: 700;
+}
+.msg p .msg1 {
+    /* em이라는 단위는 감싸는 영역에 선언된 글자크기를 1em이라고 봄
+        글자크기가 50px 이면 2em = 100px 이 됨
+        반응형을 구현할때 글자크기에 맞춰서 같이 줄어들어 편함
+    */
+    display: inline-block;
+    width: 4em; /* 글자 5개정도*/
+    height: 1em;
+    position: relative; /* before 기준*/
+}
+.msg p .msg1::before {
+    position: absolute;
+    left: 5%;
+    top: -0.6em;
+    width: 90%;
+    height: 1.9em;
+    content: "";
+    background: url(../images/msg1.png) no-repeat center center / contain;
+} 
 
+@media screen and (max-width:1320px){
+    .msg p {
+        text-align: center;
+        font-size: 40px;
+        line-height: 1.9;
+        font-weight: 700;
+    }
+}
 
+@media screen and (max-width:1024px){
+    .msg p {
+        text-align: center;
+        font-size: 30px;
+        line-height: 1.9;
+        font-weight: 700;
+    }
+}
+
+@media screen and (max-width:768px){
+    .msg p {
+        text-align: center;
+        font-size: 25px;
+        line-height: 1.9;
+        font-weight: 700;
+    }
+}
+
+@media screen and (max-width:500px){
+    .msg p {
+        text-align: center;
+        font-size: 20px;
+        line-height: 1.9;
+        font-weight: 700;
+    }
+}
 
 .footer {
     background-color: #141414;
