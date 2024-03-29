@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+   text-decoration: none;
+   color: inherit; 
+}
+a:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: 'Malgun Gothic', '맑은고딕';
+    font-size: 15px;
+    color: #666666;
+}
+.wrapper {
+    width: 1340px;
+    margin: 0 auto;
+    position: relative;
+}
+.header {
+    height: 100px;
+    z-index: 100;
+}
+.header .inner {
+    display: flex;
+    justify-content: space-between;
+}
+.header .logo a {
+    display: block;
+    width: 200px;
+    height: auto;
+    line-height: 100px;
+}
+.header .logo a img {
+    width: 100%;
+    height: 100%;
+}
+.header .gnb .depth1 {
+    display: flex;
+    text-align: center;
+}
+.header .gnb .depth1 > li {
+    width: 150px;
+    z-index: 100;
+}
+.header .gnb .depth1 > li > a {
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 100px;
+    display: block;
+}
+.header .gnb .depth1 > li.on > a {
+    background-color: #f04467;
+    color: #fff;
+}
+.header .gnb .depth1 > li > a:hover {
+    background-color: #f04467;
+    color: #fff;
+}
+.header .gnb .depth2 {
+    background-color: #0a9b97;
+    color: #fff;
+    line-height: 30px;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: none;
+}
+.header .gnb .on .depth2 {
+    display: block;
+}
+.header .gnb .depth2 li a {
+    display: block;
+}
+.header .gnb .depth2 li a:hover {
+    background-color: #f04467;
+    color: #fff;
+}
+
+.visual {
+    height: 350px;
+    position: relative;
+    width: 800px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    overflow: hidden;
+}
+.visual h2 {
+    font-size: 0;
+    line-height: 0;
+}
+.visual ul {
+    position: absolute;
+    display: flex;
+    width: 2400px;
+    left: 0;
+    top: 0;
+}
+.cts {
+    position: relative;
+}
+.cts .link a {
+    position: absolute;
+    display: block;
+    left: 65%;
+    top: -100px;
+    line-height: 0;
+}
+.cts .link a img {
+    height: 100px;
+    width: auto;
+}
+.cts .bann {
+    display: flex;
+    justify-content: center;
+}
+.cts .bann a { 
+    display: block;
+}
+.cts .bann a img {
+    height: 150px;
+}
+.cts .cts_tab {
+    position: relative;
+}
+.cts .cts_tab > ul {
+    display: flex;
+}
+.cts .cts_tab > ul .btn_gal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 102px;
+}
+.cts .cts_tab > ul  > li > button {
+    border: 1px solid #cccccc;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #019b97;
+    padding: 10px;
+}
+.cts .cts_tab > ul  > li.on > button {
+    background-color: #fff;
+}
+.cts .cts_tab > ul > li > .detail {
+    display: none;
+}
+.cts .cts_tab > ul > li.on > .detail {
+    display: block;
+}
+.cts .cts_tab .detail .gal_tab {
+    display: flex;
+    margin-top: 50px;
+}
+.cts .cts_tab .detail .gallery > li > a {
+    display: block;
+    margin: 10px;
+}
+.cts .cts_tab .detail .gallery > li > a:hover {
+    opacity: 0.5;
+}
+.cts .layer_popup {
+    width: 500px;
+    background-color: #f04467;
+    color: #fff;
+    padding: 20px;
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+.cts .layer_popup .close {
+    text-align: right;
+}
+.cts .layer_popup .close button {
+
+}
