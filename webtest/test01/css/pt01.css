@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: 'Malgun Gothic', '맑은고딕';
+    font-size: 15px;
+    color: #333;
+}
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+.header {
+    height: 100px;
+    z-index: 100;
+}
+.header .gnb .depth1 > li {
+    z-index: 100;
+}
+.header .gnb .depth1 > li > a {
+    line-height: 100px;
+    display: block;
+    font-size: 25px;
+    font-weight: 700;
+}
+.header .gnb .depth1 > li.on > a {
+    background-color: aquamarine;
+    color: #fff;
+}
+.header .gnb .depth2 {
+    background-color: blue;
+    color: #fff;
+    display: none;
+}
+.header .gnb .on .depth2 {
+    display: block;
+}
+.header .gnb .depth2 > li > a {
+    display: block;
+    line-height: 40px;
+}
+.header .gnb .depth2 > li > a:hover {
+    background-color: aquamarine;
+}
+
+.visual {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+.visual ul {
+    display: flex;
+    width: 3600px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
