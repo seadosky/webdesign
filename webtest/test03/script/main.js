@@ -30,11 +30,11 @@ $(document).ready(function(){
         $(this).addClass('on')
     })
 
-    $('.cts .cts_tab .detail .notice .open_layer').on('click', function(){
-        $('.cts .layer_popup').show()
+    $(' .notice .open_layer').on('click', function(){
+        $('.layer_popup').show()
     })
-    $('.cts .layer_popup .close').on('click', function(){
-        $('.cts .layer_popup').hide()
+    $('.layer_popup .close').on('click', function(){
+        $('.layer_popup').hide()
     })
 
 })//document
